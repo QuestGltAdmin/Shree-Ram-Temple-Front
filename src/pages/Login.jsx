@@ -27,15 +27,14 @@ export const Login = () => {
       </section>
       <section className="form-login-sec">
          <Container>
-            <Row>
+             <div className="outer-box-login">
+             <Row>
                <Col lg={6}>
-                  <div>
-                     <img src="assets/image/agrsen-img.jpg" alt="" />     
-                  </div>
+               <img src="assets/image/maharaja-agrasen.jpg" className="img-fluid left-img-login" alt="" /> 
                </Col>
                <Col lg={6}>
-                  <div>
-                      <h2>Hi. welcome to Shri Ram Temple Kamarpal, Balasore, Odisha</h2>
+                  <div className="login-form-box-main">
+                      <h2>Hi. welcome to <br/> Agrasen Ji Maharaj Temple, <br/> Indore, Madhya Pradesh</h2>
                       <p>Please Provide Your Valid Credentials</p>
 
                       <div>
@@ -51,11 +50,13 @@ export const Login = () => {
                                 <Form.Label>Email address (Optional)</Form.Label>
                                 <Form.Control type="email" placeholder="Email address" />
                             </Form.Group>
-                            <button>Submit</button>
+                            <p className='pass-line'><a href="">Forgot Password?</a></p>
+                            <button className="cmn-btn">Submit</button>
                       </div>
                   </div>
                </Col>
             </Row>
+             </div>
         </Container>
     </section>
       </Layout>
