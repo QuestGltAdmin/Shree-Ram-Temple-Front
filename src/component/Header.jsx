@@ -133,7 +133,7 @@ const Header = () => {
                                     <Nav.Link href="#link">Contact Us</Nav.Link>
 
                                     <div className="nav-right">
-                                        <a href="" class="cmn-btn style--three">Donate Now</a>
+                                        <a href="/donate-now" class="cmn-btn style--three">Donate Now</a>
                                     </div>
                                 </Nav>
                             </Navbar.Collapse>

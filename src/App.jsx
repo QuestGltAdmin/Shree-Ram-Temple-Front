@@ -14,6 +14,7 @@ import  Profile  from './pages/Dashboard/Profile';
 import  Transactions  from './pages/Dashboard/Transactions';
 import { Membership } from './pages/Dashboard/Membership';
 import Login1 from './pages/Login1';
+import { Donatenow } from './pages/Donatenow';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login1 />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/donate-now" element={<Donatenow />} />
             <Route path="/your-membership" element={<Membership />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/Profile" element={<Profile />} />

@@ -90,7 +90,8 @@ a{
 font-size: 16px;
 font-weight: 600;
 }
-.login-form-box-main .form-control {
+.login-form-box-main .form-control,
+.login-form-box-main .form-select {
     border: 2px solid #d4600b;
     padding: 10px 15px;
     box-shadow: none !important;
