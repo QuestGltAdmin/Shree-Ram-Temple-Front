@@ -1,5 +1,7 @@
+/* common css code start */
 body{
-    font-family: 'Montserrat ' !important;
+    font-family: 'Montserrat', sans-serif !important;
+    overflow-x: hidden;
 }
 .cmn-btn {
     padding: 14px 35px;
@@ -22,7 +24,7 @@ body{
 .logo-images p{
     color: #6c1a06;
     margin-bottom: 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 .fa-phone-volume{
@@ -31,6 +33,29 @@ body{
 .cmn-btn:hover{
     color: #fff;
 }
+.medium {
+    color: #d4600b;
+    font-size: 32px;
+    line-height: 45px;
+    font-weight: 700;
+}
+.big {
+    font-size: 54px;
+    line-height: 72px;
+    font-weight: 800;
+}
+.section-title {
+    font-size: 31px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.para {
+    font-size: 15px;
+    color: #232323;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+/* common css code end */
 .header .nav-right {
     margin-left: 30px;
 }
@@ -200,6 +225,11 @@ body{
 }
 .footer-section .logo-images p{
     color: #fff;
+}
+@media (max-width:1350px){
+    .header__bottom .nav-link{
+        margin-left: 12px;
+    }
 }
 @media (max-width:991px){
     .header .nav-right {
