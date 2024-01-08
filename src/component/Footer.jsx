@@ -51,7 +51,7 @@ const Footer = () => {
                         <Row>
                             <Col md="12" className="text-center ">
                                 <p>
-                                    Copyright © 2024 | All Rights Reserved to <a className='' target='_blank' href='https://www.questglt.com/'> Quest GLT </a>.{" "}
+                                    Copyright © 2024 | All Rights Reserved to <a className='text-white' target='_blank' href='https://www.questglt.com/'> Quest GLT </a>.{" "}
                                     <br />
                                     {/* Website Developed by{" "}
             <a href="" target="_blank">
