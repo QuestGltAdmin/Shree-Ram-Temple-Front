@@ -161,13 +161,21 @@
     .header .nav-right {
         margin-left: 0;
         margin-top: 24px;
+        margin-bottom: 24px;
     }
     .header__bottom .nav-link{
         margin-left: 0;
         padding: 12px 8px;
     }
-    .header{
+    .header .header__bottom .navbar-collapse{
         overflow: scroll;
+        max-height: 400px;
+    }
+    .header .navbar-nav .dropdown-menu{
+        width: 100%;
+    }
+    .header .navbar-nav{
+        display: block;
     }
 }
 @media (max-width:768px){
