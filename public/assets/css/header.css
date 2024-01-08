@@ -1,0 +1,24 @@
+.header {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.header__top {
+    padding: 5px 0;
+    background: #d4600b;
+}
+.header__top .left a {
+    color: #ffffff;
+}
+.header__top .right a {
+    color: #ffffff;
+    margin: 5px 15px;
+}
+.header__top .right a:last-child {
+    margin-right: 0;
+}
