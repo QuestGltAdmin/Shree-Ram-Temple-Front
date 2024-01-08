@@ -90,10 +90,10 @@ const Header = () => {
                             </Col>
                             <Col sm="6">
                                 <div className="right  text-end">
-                                    <a href="">
+                                    <a href="/login">
                                         <i className="fas fa-user fa-fw" /> Login
                                     </a>
-                                    <a href="">
+                                    <a href="/register">
                                         <i className="fas fa-user-plus fa-fw" /> Registration
                                     </a>
                                 </div>
@@ -111,26 +111,26 @@ const Header = () => {
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="ms-auto align-items-center">
-                                    <Nav.Link href="#home">Home</Nav.Link>
+                                    <Nav.Link href="/">Home</Nav.Link>
                                     <NavDropdown title="About Us" id="basic-nav-dropdown" show={showDropdown} onMouseOver={handleMouseOver}
                                         onMouseLeave={handleMouseLeave} onClick={() => {if(isCheck){handleMouseLeave(),setIsCheck(false)}else{handleMouseOver(),setIsCheck(true)}}}>
-                                        <NavDropdown.Item href="#action/3.1">About the Temple</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.2">
+                                        <NavDropdown.Item href="">About the Temple</NavDropdown.Item>
+                                        {/* <NavDropdown.Item href="">
                                             Another action
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.3">About Suma Blessings Foundation</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.4">
+                                        </NavDropdown.Item> */}
+                                        <NavDropdown.Item href="">About Suma Blessings Foundation</NavDropdown.Item>
+                                        <NavDropdown.Item href="">
                                             Our Legal Status
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.4">
+                                        <NavDropdown.Item href="">
                                             How to Reach the Temple
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.4">
+                                        <NavDropdown.Item href="">
                                             Board Members
                                         </NavDropdown.Item>
                                     </NavDropdown>
-                                    <Nav.Link href="#link">Management Team</Nav.Link>
-                                    <Nav.Link href="#link">Contact Us</Nav.Link>
+                                    <Nav.Link href="">Management Team</Nav.Link>
+                                    <Nav.Link href="">Contact Us</Nav.Link>
 
                                     <div className="nav-right">
                                         <a href="/donate-now" class="cmn-btn style--three">Donate Now</a>
