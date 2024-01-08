@@ -1,3 +1,6 @@
+body{
+    font-family: 'Montserrat';
+}
 .cmn-btn {
     padding: 14px 35px;
     text-transform: capitalize;
@@ -19,7 +22,7 @@
 .logo-images p{
     color: #6c1a06;
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
 }
 .fa-phone-volume{
@@ -189,6 +192,14 @@
 .footer-bottom p{
     margin-bottom: 0;
     color: #e6e6e6;
+}
+.footer-section .logo-images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-section .logo-images p{
+    color: #fff;
 }
 @media (max-width:991px){
     .header .nav-right {

@@ -32,7 +32,8 @@ const Footer = () => {
                             </Col>
                             <Col md="4">
                                 <div className='logo-img text-center'>
-                                    <img src="assets/images/logo.png" className='img-fluid' alt="" />
+                                <div className='logo-images'><img src="assets/images/logo.png" className='img-fluid' alt="" />
+                            <p>श्री अग्रसेन तीर्थधाम इंदौर</p></div>
                                 </div>
                             </Col>
                             <Col md="4">
