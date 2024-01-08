@@ -9,11 +9,11 @@ const Header = () => {
     const [showDropdown, setShowDropdown] = useState(false);
 
     const handleMouseOver = () => {
-      setShowDropdown(true);
+        setShowDropdown(true);
     };
-  
+
     const handleMouseLeave = () => {
-      setShowDropdown(false);
+        setShowDropdown(false);
     };
 
     // on scroll change header css//
@@ -102,14 +102,16 @@ const Header = () => {
                 <div className='header__bottom' id="headerId">
                     <Navbar expand="lg" className="bg-body-tertiary">
                         <Container>
-                            <Navbar.Brand href="#home">                <img src="assets/images/logo.png" className='img-fluid' alt="" />
-</Navbar.Brand>
+                            <Navbar.Brand href="#home">
+                                <div className='logo-images'><img src="assets/images/logo.png" className='img-fluid' alt="" />
+                            <p>श्री अग्रसेन तीर्थधाम इंदौर</p></div>
+                            </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="ms-auto align-items-center">
                                     <Nav.Link href="#home">Home</Nav.Link>
                                     <NavDropdown title="About Us" id="basic-nav-dropdown" show={showDropdown} onMouseOver={handleMouseOver}
-      onMouseLeave={handleMouseLeave}>
+                                        onMouseLeave={handleMouseLeave}>
                                         <NavDropdown.Item href="#action/3.1">About the Temple</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">
                                             Another action
@@ -127,7 +129,7 @@ const Header = () => {
                                     </NavDropdown>
                                     <Nav.Link href="#link">Management Team</Nav.Link>
                                     <Nav.Link href="#link">Contact Us</Nav.Link>
-                                   
+
                                     <div className="nav-right">
                                         <a href="" class="cmn-btn style--three">Donate Now</a>
                                     </div>
