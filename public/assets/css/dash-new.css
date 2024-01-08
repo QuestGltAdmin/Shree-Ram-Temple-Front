@@ -60,7 +60,7 @@ a, button {
     align-items: center;
     font-size: 18px;
     font-weight: 600;
-    color: #fff;
+    color: #fff !important;
 }
 .dashboard-layout .navbar-brand img{
     margin-right: 5px;
