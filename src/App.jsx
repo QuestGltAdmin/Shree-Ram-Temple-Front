@@ -8,12 +8,12 @@ import {
   Route,
 } from "react-router-dom";
 import HomePage from './pages/HomePage';
-import { Login } from './pages/login';
 import { Register } from './pages/Register';
 import  Dashboard  from './pages/Dashboard/Dashboard';
 import  Profile  from './pages/Dashboard/Profile';
 import  Transactions  from './pages/Dashboard/Transactions';
 import { Membership } from './pages/Dashboard/Membership';
+import Login1 from './pages/Login1';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,7 +24,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login1 />} />
             <Route path="/register" element={<Register />} />
             <Route path="/your-membership" element={<Membership />} />
             <Route path="/dashboard" element={<Dashboard />} />

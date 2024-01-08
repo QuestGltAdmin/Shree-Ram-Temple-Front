@@ -78,6 +78,7 @@
     border-radius: 5px;
     transition: all 0.35s ease-in-out;
     text-align: center;
+    min-height: 346px;
 }
 .stay-us-area .item > i,.stay-us-area .item > i img {
     display: inline-block;
@@ -192,6 +193,9 @@
     }
 }
 @media (max-width:768px){
+    .stay-us-area .item {
+        min-height: auto;
+    }
     .logo-images p{
         font-size: 0.8rem;
     }

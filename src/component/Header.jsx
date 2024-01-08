@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const Header = () => {
     // show dropdown on hover//
     const [showDropdown, setShowDropdown] = useState(false);
+    const [isCheck, setIsCheck] = useState(false);
 
     const handleMouseOver = () => {
         setShowDropdown(true);
@@ -15,6 +16,7 @@ const Header = () => {
     const handleMouseLeave = () => {
         setShowDropdown(false);
     };
+    // show dropdown on hover//
 
     // on scroll change header css//
     const controlNavbar = () => {
@@ -111,7 +113,7 @@ const Header = () => {
                                 <Nav className="ms-auto align-items-center">
                                     <Nav.Link href="#home">Home</Nav.Link>
                                     <NavDropdown title="About Us" id="basic-nav-dropdown" show={showDropdown} onMouseOver={handleMouseOver}
-                                        onMouseLeave={handleMouseLeave}>
+                                        onMouseLeave={handleMouseLeave} onClick={() => {if(isCheck){handleMouseLeave(),setIsCheck(false)}else{handleMouseOver(),setIsCheck(true)}}}>
                                         <NavDropdown.Item href="#action/3.1">About the Temple</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">
                                             Another action

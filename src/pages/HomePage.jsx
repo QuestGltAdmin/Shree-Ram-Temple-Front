@@ -35,11 +35,11 @@ const HomePage = () => {
                             <Col md="7" className='offset-md-1'>
                                 <div className="section-content ">
                                     <h2 className="section-title ">About the Temple</h2>
-                                    <p className='para'>Balasore is one of the coastal Districts of Odisha. It lies in the northernmost part of the state. Kamarapal is a Village in the Balasore District.</p>
+                                    <p className='para'>The All India Agrawal Conference was established in 1975 with the aim of spreading the glorious history of Maharaja Agrasen all over the world and setting up an organization of all the foremen.</p>
 
-                                    <p className='para'>Shri Ram temple construction work going on at a distance of 67 km from the Balasore Railway Station and 17 km from Soro Railway Station. The newly under-construction Shri Ram Temple is a wonderful architectural model which will attract a good number of visitors to this site.The building with pink stone will have many side deities on the temple campus. All the rituals are being observed as per the Shri Ram Temple Ayodhya.</p>
+                                    <p className='para'>In order to provide education, health and employment to the weaker sections of the society, the Agrasen Foundation has been set up by the conference under which a plan is made to collect a sum of Rs 500 crores from the society and form a huge fund, so that the education of orphans , Higher education of deserving poor children, help and people unable to get treatment for serious diseases like cancer, kidney, heart, brain tumor Agroha has set a goal to develop as Shakti. </p>
 
-                                    <p className='para'>The stone curving and the monumental artifact will draw the attraction of visitors.</p><p></p>
+                                    {/* <p className='para'>The stone curving and the monumental artifact will draw the attraction of visitors.</p><p></p> */}
 
                                 </div>
                             </Col>
@@ -55,7 +55,7 @@ const HomePage = () => {
                             </div>
                             <Col lg="3" md="6">
                                 <div className='item'>
-                                    <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
+                                    <img src="assets/image/stone.jpg" className='img-fluid w-100' alt="" />
                                     <div className="info" >
                                         <h4>
                                             Donate 1 Sqft Pink Stone
@@ -68,7 +68,7 @@ const HomePage = () => {
                             </Col>
                             <Col lg="3" md="6">
                                 <div className='item'>
-                                    <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
+                                    <img src="assets/image/saria.png" className='img-fluid w-100' alt="" />
                                     <div className="info" >
                                         <h4>
 
@@ -82,7 +82,7 @@ const HomePage = () => {
                             </Col>
                             <Col  lg="3" md="6">
                                 <div className='item'>
-                                    <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
+                                    <img src="assets/image/cement.png" className='img-fluid w-100' alt="" />
                                     <div className="info" >
                                         <h4>
                                             Donate 11 Bags Of Cement
@@ -95,7 +95,7 @@ const HomePage = () => {
                             </Col>
                             <Col  lg="3" md="6">
                                 <div className='item'>
-                                    <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
+                                    <img src="assets/image/cement2.png" className='img-fluid w-100' alt="" />
                                     <div className="info" >
                                         <h4>
                                             Donate 4 Bags Of Cement

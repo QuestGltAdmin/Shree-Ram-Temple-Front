@@ -74,7 +74,8 @@ body{
     z-index: 99;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s;
+    transition: all ease-in-out .5s;
+    
 }
 .header__top {
     padding: 8px 0;
@@ -253,7 +254,7 @@ body{
     }
     .header .header__bottom .navbar-collapse{
         overflow: scroll;
-        max-height: 400px;
+        max-height: 280px;
     }
     .header .navbar-nav .dropdown-menu{
         width: 100%;
