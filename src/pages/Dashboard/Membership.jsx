@@ -20,7 +20,7 @@ export const Membership = () => {
                         <div className="membership-card-design">
                             <h2>Membership Card</h2>
                             <h3><span>Membership ID</span> <br/> 123456 786596</h3>
-                            <h4><span>Soniya Patidar</span> <span>Valid to: 25/06/2024</span></h4>
+                            <h4><span>Alok Agrawal</span> <span>Valid to: 25/06/2024</span></h4>
                         </div>
                     </Col>
                   </Row>
