@@ -109,7 +109,7 @@ export const Register = () => {
                                     
                                 </Row>
                            
-                            <button className="cmn-btn">Submit</button>
+                            <a href='/login' className="cmn-btn text-center">Submit</a>
                       </div>
                   </div>
                </Col>
