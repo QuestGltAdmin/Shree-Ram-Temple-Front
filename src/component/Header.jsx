@@ -42,8 +42,8 @@ const Header = () => {
                         <Row className="align-items-center">
                             <Col sm="6">
                                 <div className="left d-flex align-items-center">
-                                    <a href="tel:+917065081062">
-                                        <i className="fas fa-phone-volume" /> Call Us
+                                    <a href="tel:+919827263013">
+                                        <i className="fas fa-phone-volume" /> Call Us : +919827263013
                                     </a>
                                     {/* <div className="language">
             <div className="google-translate">
@@ -104,7 +104,7 @@ const Header = () => {
                 <div className='header__bottom' id="headerId">
                     <Navbar expand="lg" className="bg-body-tertiary">
                         <Container>
-                            <Navbar.Brand href="#home">
+                            <Navbar.Brand href="/">
                                 <div className='logo-images'><img src="assets/images/logo.png" className='img-fluid' alt="" />
                             <p>श्री अग्रसेन तीर्थधाम इंदौर</p></div>
                             </Navbar.Brand>

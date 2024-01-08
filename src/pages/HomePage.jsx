@@ -17,7 +17,7 @@ const HomePage = () => {
                             <Col lg="5">
                                 <div className="hero__content text-left">
                                     <h2 className="medium" >Serve the Lord by sharing your contribution to build</h2>
-                                    <h2 className="big" >the Bhavya and Divya Agrasen Maharaj Temple</h2>
+                                    <h2 className="big" >the Bhavya and Divya Agrasen Maharaja Temple</h2>
                                     <a href="/temple-donation" className="cmn-btn">Contribute your bit in this holy initiative.</a>
                                 </div>
                             </Col>
@@ -50,7 +50,7 @@ const HomePage = () => {
                     <Container>
                         <Row>
                             <div className="section-header text-center">
-                                <h3 className="text-white">Donate to Build the </h3>
+                                <h3 className="text-white">Donate to Build the Temple. </h3>
                                 <h2 className="section-title text-white">Temple Construction &amp; Maintenance</h2>
                             </div>
                             <Col lg="3" md="6">
@@ -108,7 +108,7 @@ const HomePage = () => {
                             </Col>
                             <Col md="12">
                                 <div className='text-center mt-3'>
-                                    <a className='cmn-btn'>Read More </a>
+                                    <a className='cmn-btn'>View More </a>
                                 </div>
                             </Col>
                         </Row>
@@ -119,7 +119,7 @@ const HomePage = () => {
                         <Row>
                             <div className="section-header text-center">
                                 <h2 className="section-title text-black">How Can You Get Involved?</h2>
-                                <h3 className="text-black">Offer your seva and receive Lord Shree Rama's blessings!</h3>
+                                <h3 className="text-black">Offer your seva and receive Shree Agrasen Maharaja blessings!</h3>
                             </div>
                         </Row>
                         <Row>
@@ -154,7 +154,7 @@ const HomePage = () => {
                                                 Donate for Temple Construction
                                             </a>
                                         </h4>
-                                        <p className='para'>Building the Temple means love toward Lord Ram.</p>
+                                        <p className='para'>Building the Temple means love toward Agrasen Maharaja.</p>
                                         <a href="">
                                             <i className="fas fa-angle-right" />
                                         </a>
@@ -173,7 +173,7 @@ const HomePage = () => {
                                             <a href="">Membership Program</a>
                                         </h4>
                                         <p className='para'>
-                                            Become a member of the Shri Ram Temple Kamarpal and help us to support our
+                                            Become a member of the Shri Agrasen Maharaja Temple Kamarpal and help us to support our
                                             mission.
                                         </p>
                                         <a href="">
@@ -193,7 +193,7 @@ const HomePage = () => {
                                 <div className='united-box row'>
                                     <div className="col-lg-10 text-center set-content">
                                         <h2 className="text-white section-title">
-                                            Let's get united to build the Bhavya and Divya temple in Balasore, Odisha
+                                            Let's get united to build the Bhavya and Divya temple in Indore, Madhya Pradesh
                                         </h2>
                                         <p className="para text-white">Serve the God by sharing your contribution.</p>
                                         <a
