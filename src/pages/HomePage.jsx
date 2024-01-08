@@ -18,7 +18,7 @@ const HomePage = () => {
                                 <div className="hero__content text-left">
                                     <h2 className="medium" >Serve the Lord by sharing your contribution to build</h2>
                                     <h2 className="big" >the Bhavya and Divya Agrasen Maharaja Temple</h2>
-                                    <a href="/temple-donation" className="cmn-btn">Contribute your bit in this holy initiative.</a>
+                                    <a href="" className="cmn-btn">Contribute your bit in this holy initiative.</a>
                                 </div>
                             </Col>
                         </Row>

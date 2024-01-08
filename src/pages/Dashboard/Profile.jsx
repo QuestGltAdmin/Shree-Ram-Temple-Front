@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Table, Form, InputGroup} from 'react-bootstrap'
-import Layoutdash from '../../Component/Layoutdash';
+import Layoutdash from '../../component/Layoutdash';
+
 
 
 const Profile = () => {
