@@ -102,7 +102,8 @@ const Header = () => {
                 <div className='header__bottom' id="headerId">
                     <Navbar expand="lg" className="bg-body-tertiary">
                         <Container>
-                            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                            <Navbar.Brand href="#home">                <img src="assets/images/logo.png" className='img-fluid' alt="" />
+</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="ms-auto align-items-center">

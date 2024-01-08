@@ -10,6 +10,9 @@
     font-weight: 600;
     border-radius: 4px;
 }
+.cmn-btn:hover{
+    color: #fff;
+}
 .header .nav-right {
     margin-left: 30px;
 }
@@ -43,6 +46,9 @@
     transition: all 0.3s;
     background: #fff;
     border-bottom: 1px solid #f1f1f1;
+}
+.header__bottom .navbar-brand img{
+    max-height: 80px;
 }
 .header__bottom.darker-header{
     position: fixed;
@@ -103,12 +109,19 @@
     background: #6c1a06;
 
 }
+.footer-section .logo-img img{
+    max-height: 80px;
+}
+.footer-section .telephone-sec a{
+        color: #e6e6e6;
+}
 .footer-section .social-links ul{
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
     display: flex;
     flex-wrap: wrap;    
+    justify-content: center;
 }
 .footer-section .social-links li {
     height: 40px;
@@ -117,6 +130,13 @@
     border-radius: 50%;
     margin: 3px 5px;
     text-align: center;
+}
+.footer-section .social-links li:hover {
+    background-color: #d4600b;
+    border-color: #d4600b;
+}
+.footer-section .social-links li:hover a{
+    color: #fff;
 }
 .footer-section .social-links li a {
     line-height: 40px;
@@ -133,6 +153,10 @@
 .footer-bottom {
     background: #6c1a06;
 }
+.footer-bottom p{
+    margin-bottom: 0;
+    color: #e6e6e6;
+}
 @media (max-width:991px){
     .header .nav-right {
         margin-left: 0;
@@ -141,5 +165,13 @@
     .header__bottom .nav-link{
         margin-left: 0;
         padding: 12px 8px;
+    }
+    .header{
+        overflow: scroll;
+    }
+}
+@media (max-width:768px){
+    .footer-section .logo-img img{
+        margin: 20px 0;
     }
 }

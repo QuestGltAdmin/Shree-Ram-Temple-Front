@@ -8,7 +8,7 @@ const Footer = () => {
   className="footer-section ">
   <div className="footer-top">
     <Container>
-     <Row>
+     <Row className='align-items-center'>
         <Col md="4">
             <div className='social-links'>
                 <ul>
@@ -31,14 +31,14 @@ const Footer = () => {
             </div>
         </Col>
         <Col md="4">
-            <div>
-                <img src="" className='img-fluid' alt="" />
+            <div className='logo-img text-center'>
+                <img src="assets/images/logo.png" className='img-fluid' alt="" />
             </div>
         </Col>
         <Col md="4">
-            <div className=''>
-            <a href="tel:+917065081062">
-                                        <i className="fas fa-phone-volume" /> Call Us
+            <div className='telephone-sec text-center'>
+            <a href="tel:+919827263013">
+                                        <i className="fas fa-phone-volume" /> Call Us : +919827263013
                                     </a>
             </div>
         </Col>
