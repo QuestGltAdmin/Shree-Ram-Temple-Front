@@ -36,7 +36,7 @@ const Profile = () => {
                                 </div>
                             </Col>
                             <Col lg={8}>
-                            <Row>
+                              <Row>
                      
                                 <Col lg={6}>
                                     <Form.Group className="mb-3">
@@ -45,28 +45,58 @@ const Profile = () => {
                                 </Col>
                                 <Col lg={6}>
                                     <Form.Group className="mb-3">
-                                        <Form.Control type="email"  placeholder="Email Address" />
-                                    </Form.Group>
-                                </Col>
-                                </Row>
-                                <Row>
-                                
-                                <Col lg={6}>
-                                    <Form.Group className="mb-3">
                                         <Form.Control type="text"  placeholder="Phone No." />
                                     </Form.Group>
                                 </Col>
+                                
+                                </Row>
+                                <Row>
                                 <Col lg={6}>
+                                    <Form.Group className="mb-3">
+                                        <Form.Control type="text"  placeholder="Father's Name" />
+                                    </Form.Group>
+                                </Col>
+                                <Col lg={6}>
+                                    <Form.Group className="mb-3">
+                                        <Form.Control type="email"  placeholder="Email Address(Optional)" />
+                                    </Form.Group>
+                                </Col>
+
+                                </Row>
+
+                                <Row>
+                     
+                                <Col lg={6}>
+                                    <Form.Group className="mb-3">
+                                        <Form.Control type="text"  placeholder="Your Business" />
+                                    </Form.Group>
+                                </Col>
+                                <Col lg={6}>
+                                      <Form.Group className="mb-3">
+                                          <Form.Control type="text"  placeholder="Blood Group" />
+                                      </Form.Group>
+                                  </Col>
+                                
+                                </Row>
+                                <Row>
+                                  
+                                  <Col lg={12}>
+                                      <Form.Group className="mb-3">
+                                          <Form.Control as="textarea" rows={2}  placeholder="Your Address" />
+                                      </Form.Group>
+                                  </Col>
+                                  
+                                </Row>
+                              
+                                <div>
+                                  <button className="common-btn  m-0">Submit</button>
+                                </div>
                                    
                                 </Col>
                          </Row>
                      
-                     <div>
-                       <button className="common-btn  m-0">Submit</button>
-                     </div>
-                            </Col>
+                          
                             
-                        </Row>
 
                           
 

@@ -25,21 +25,18 @@ const Dashboard = () => {
                           <h4>10,00,000</h4>
                         </div>
                       </Col>
+                      
                       <Col lg={4} md={6} sm={6} xs={12}>
                         <div className="shadow-box-dash">
-                          <p>Total Donatar</p>
+                          <p>Total Referral</p>
+                          <h4>480</h4>
 
-
-                          <h4>200</h4>
                         </div>
                       </Col>
                       <Col lg={4} md={6} sm={6} xs={12}>
                         <div className="shadow-box-dash">
-                          <p>Total Referral</p>
-
-
-                          <h4>80</h4>
-
+                          <p>Total Donatar</p>
+                          <h4>200</h4>
                         </div>
                       </Col>
                      

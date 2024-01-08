@@ -17,7 +17,7 @@ const Transactions = () => {
               <Col lg={12}>
                 <div className="dashboard-white-box">
                   <div className="w-100">
-                    <h2 className="inner-page-heading mb-2">All Transactions</h2>
+                    <h2 className="inner-page-heading mb-2">Referral List</h2>
                    
                     <Row>
                       <Col>
@@ -44,54 +44,27 @@ const Transactions = () => {
                               <thead>
                                 <tr>
                                   <th>#</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Username</th>
+                                  <th>Referred User Name</th>
+                                  <th>Donate Amount</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
                                   <td>1</td>
                                   <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
+                                  <td>1500</td>
                                 </tr>
                                 <tr>
                                   <td>2</td>
                                   <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
+                                  <td>2000</td>
                                 </tr>
                                 <tr>
                                   <td>3</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
+                                  <td>John</td>
+                                  <td>3000</td>
                                 </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <td>5</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <td>6</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <td>7</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
+                                
                                
                               </tbody>
                             </Table>

@@ -23,7 +23,7 @@ export default function Header() {
                                     <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="me-auto">
                                         <Nav.Link href="/Dashboard"><i className="fas fa-th-large"></i> Dashboard</Nav.Link>
-                                        <Nav.Link href="/Transactions"><i className="fas fa-exchange-alt"></i> Transactions</Nav.Link>
+                                        <Nav.Link href="/Transactions"><i className="fas fa-exchange-alt"></i> Referral List</Nav.Link>
                                         <Nav.Link href="/Profile"><i className="fas fa-user"></i> Profile</Nav.Link>
                                         
                                         
