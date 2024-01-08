@@ -85,7 +85,8 @@ a{
     margin: 0 0 1rem 0;
     text-align: center;
 }
-.login-form-box-main .form-label{
+.login-form-box-main .form-label,
+.login-form-box-main .form-check-label{
 font-size: 16px;
 font-weight: 600;
 }
@@ -106,6 +107,17 @@ font-weight: 600;
     color: #d4600b !important;
     font-weight: 600;
 }
+.fa-phone{
+    transform: rotate(90deg);
+  }
+  .login-form-box-main .input-group-text{
+background-color: transparent;
+border: 2px solid #d4600b;
+color: #d4600b;
+border-right: 0;
+min-width: 50px;
+justify-content: center;
+  }
 
 @media (max-width: 992px) {
     .left-img-login{
@@ -130,7 +142,8 @@ font-weight: 600;
     .login-form-box-main {
         padding: 20px 15px 20px 15px;
     }
-    .login-form-box-main .form-label {
+    .login-form-box-main .form-label,
+    .login-form-box-main .form-check-label {
         font-size: 12px;
     }
     .login-form-box-main .form-control {
@@ -144,5 +157,27 @@ font-weight: 600;
     }
     .cmn-btn {
         padding: 10px 30px;
+        font-size: 14px;
     }
+    .login-form-box-main .input-group-text {
+        border: 1px solid #d4600b;
+        min-width: 35px;
+        font-size: 12px;
+    }
+  }
+
+
+  /* register page css */
+
+  .outer-box-login.for-register-outer{
+    max-width: 900px;
+    margin: auto;
+  }
+  .login-form-box-main .form-check-input{
+    border: 1px solid #d4600b !important;
+    box-shadow: none !important;
+  }
+  .login-form-box-main .form-check-input:checked{
+    background-color: #d4600b !important;
+    
   }

@@ -39,17 +39,21 @@ export const Login = () => {
 
                       <div>
                             <Form.Group className="mb-3">
-                                <Form.Label>Full Name</Form.Label>
-                                <Form.Control type="email" placeholder="Full Name" />
+                                <Form.Label>User Name</Form.Label>
+                                <InputGroup>
+                                    <InputGroup.Text><i className="fas fa-user" /></InputGroup.Text>
+                                    <Form.Control type="text" placeholder="User Name" />
+                                </InputGroup>
+                                
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Form.Label>Phone Number</Form.Label>
-                                <Form.Control type="email" placeholder="Phone Number" />
+                                <Form.Label>Password</Form.Label>
+                                <InputGroup>
+                                    <InputGroup.Text><i className="fas fa-key" /></InputGroup.Text>
+                                    <Form.Control type="text" placeholder="Password" />
+                                </InputGroup>
                             </Form.Group>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Email address (Optional)</Form.Label>
-                                <Form.Control type="email" placeholder="Email address" />
-                            </Form.Group>
+                           
                             <p className='pass-line'><a href="">Forgot Password?</a></p>
                             <button className="cmn-btn">Submit</button>
                       </div>
