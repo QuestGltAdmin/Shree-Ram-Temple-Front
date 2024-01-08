@@ -31,7 +31,7 @@ export const Donatenow = () => {
              <Row>
                <Col lg={12}>
                   <div className="login-form-box-main">
-                      <h2>Donat Now</h2>
+                      <h2>Donate Now</h2>
 
                       <div>
                         
