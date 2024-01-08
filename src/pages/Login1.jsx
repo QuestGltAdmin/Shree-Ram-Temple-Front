@@ -55,7 +55,7 @@ const Login1 = () => {
                                             </Form.Group>
 
                                             <p className='pass-line'><a href="">Forgot Password?</a></p>
-                                            <a href="/dashboard" className="cmn-btn">Submit</a>
+                                            <a href="/dashboard" className="cmn-btn text-center">Submit</a>
                                         </div>
                                     </div>
                                 </Col>
