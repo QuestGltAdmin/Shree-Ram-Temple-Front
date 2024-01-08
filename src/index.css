@@ -24,10 +24,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
+  font-family:'Montserrat', sans-serif !important;
   min-height: 100vh;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6f6f6f;
 }
 
 h1 {

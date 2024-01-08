@@ -1,10 +1,71 @@
 import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+     <footer
+  className="footer-section ">
+  <div className="footer-top">
+    <Container>
+     <Row>
+        <Col md="4">
+            <div className='social-links'>
+                <ul>
+                    <li>
+                        <a><i className="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a><i className="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a><i className="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a><i className="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a><i className="fab fa-facebook-f"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </Col>
+        <Col md="4">
+            <div>
+                <img src="" className='img-fluid' alt="" />
+            </div>
+        </Col>
+        <Col md="4">
+            <div className=''>
+            <a href="tel:+917065081062">
+                                        <i className="fas fa-phone-volume" /> Call Us
+                                    </a>
+            </div>
+        </Col>
+     </Row>
+    </Container>
+  </div>
+  <div className="footer-bottom">
+    <Container>
+      <hr />
+      <Row>
+        <Col md="12" className="text-center ">
+          <p>
+            Copyright © 2024 | All Rights Reserved to Suma Blessings Foundation.{" "}
+            <br />
+            {/* Website Developed by{" "}
+            <a href="" target="_blank">
+              {" "}
+              dwsit
+            </a> */}
+          </p>
+        </Col>
+      </Row>
+    </Container>
+  </div>
+</footer>
+ 
+    </>
   )
 }
 
