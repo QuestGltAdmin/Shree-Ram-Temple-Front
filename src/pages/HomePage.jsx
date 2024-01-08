@@ -53,7 +53,7 @@ const HomePage = () => {
                                 <h3 className="text-white">Donate to Build the </h3>
                                 <h2 className="section-title text-white">Temple Construction &amp; Maintenance</h2>
                             </div>
-                            <Col md="3">
+                            <Col lg="3" md="6">
                                 <div className='item'>
                                     <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
                                     <div className="info" >
@@ -66,7 +66,7 @@ const HomePage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col md="3">
+                            <Col lg="3" md="6">
                                 <div className='item'>
                                     <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
                                     <div className="info" >
@@ -80,7 +80,7 @@ const HomePage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col md="3">
+                            <Col  lg="3" md="6">
                                 <div className='item'>
                                     <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
                                     <div className="info" >
@@ -93,7 +93,7 @@ const HomePage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col md="3">
+                            <Col  lg="3" md="6">
                                 <div className='item'>
                                     <img src="assets/image/about-us.jpg" className='img-fluid' alt="" />
                                     <div className="info" >
@@ -119,7 +119,7 @@ const HomePage = () => {
                         <Row>
                             <div className="section-header text-center">
                                 <h2 className="section-title text-black">How Can You Get Involved?</h2>
-                                <h3 className="text-white">Offer your seva and receive Lord Shree Rama's blessings!</h3>
+                                <h3 className="text-black">Offer your seva and receive Lord Shree Rama's blessings!</h3>
                             </div>
                         </Row>
                         <Row>
@@ -191,7 +191,7 @@ const HomePage = () => {
                         <Row>
                             <Col md="12">
                                 <div className='united-box row'>
-                                    <div className="col-lg-10 text-center">
+                                    <div className="col-lg-10 text-center set-content">
                                         <h2 className="text-white section-title">
                                             Let's get united to build the Bhavya and Divya temple in Balasore, Odisha
                                         </h2>
