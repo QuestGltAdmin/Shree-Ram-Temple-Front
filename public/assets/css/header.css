@@ -241,6 +241,15 @@ body{
     .header .nav-right {
         margin-left: 16px;
     }
+    .cmn-btn{
+        padding: 14px 22px;
+    }
+    .construction-sec .info{
+        padding: 22px;
+    }
+    .construction-sec .info{
+        min-height: 260pxs;
+    }
 }
 @media (max-width:991px){
     .header .nav-right {
