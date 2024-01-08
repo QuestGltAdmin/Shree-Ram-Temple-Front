@@ -1,11 +1,13 @@
 import React from 'react'
 import { Col, Form, InputGroup, Row } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
+import Layout from '../component/Layout'
 
 export const Login = () => {
   return (
     <>
-      <section className="login-header-strip">
+    <Layout>
+    <section className="login-header-strip">
          <Container>
             <Row>
                <Col>
@@ -23,7 +25,7 @@ export const Login = () => {
            
          </Container>
       </section>
-      <section className="">
+      <section className="form-login-sec">
          <Container>
             <Row>
                <Col lg={6}>
@@ -56,6 +58,8 @@ export const Login = () => {
             </Row>
         </Container>
     </section>
+      </Layout>
+      
     </>
   )
 }
