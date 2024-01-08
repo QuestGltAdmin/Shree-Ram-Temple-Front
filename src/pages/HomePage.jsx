@@ -5,7 +5,9 @@ const HomePage = () => {
   return (
     <>
       <Layout>
-        hi
+        <div className='banner-sec'>
+            i
+        </div>
       </Layout>
     </>
   )
