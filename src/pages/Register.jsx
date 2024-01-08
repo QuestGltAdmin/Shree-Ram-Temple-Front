@@ -38,26 +38,15 @@ export const Register = () => {
                             <Row>
                                     <Col lg={6}>
                                         <Form.Group className="mb-3">
-                                            <Form.Label>First Name</Form.Label>
+                                            <Form.Label>Full Name</Form.Label>
                                             <InputGroup>
                                                 <InputGroup.Text><i className="fas fa-user" /></InputGroup.Text>
-                                                <Form.Control type="text" placeholder="First Name" />
+                                                <Form.Control type="text" placeholder="Full Name" />
                                             </InputGroup>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6}>
                                     <Form.Group className="mb-3">
-                                            <Form.Label>Last Name</Form.Label>
-                                            <InputGroup>
-                                                <InputGroup.Text><i className="fas fa-user" /></InputGroup.Text>
-                                                <Form.Control type="text" placeholder="Last Name" />
-                                            </InputGroup>
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col lg={6}>
-                                        <Form.Group className="mb-3">
                                             <Form.Label>Phone Number</Form.Label>
                                             <InputGroup>
                                                 <InputGroup.Text><i className="fas fa-phone" /></InputGroup.Text>
@@ -65,6 +54,31 @@ export const Register = () => {
                                             </InputGroup>
                                         </Form.Group>
                                     </Col>
+                                </Row>
+                                <Row>
+                                    
+                                    <Col lg={6}>
+                                    <Form.Group className="mb-3">
+                                            <Form.Label>Password</Form.Label>
+                                            <InputGroup>
+                                                <InputGroup.Text><i className="fas fa-lock" /></InputGroup.Text>
+                                                <Form.Control type="text" placeholder="Password" />
+                                            </InputGroup>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={6}>
+                                    <Form.Group className="mb-3">
+                                            <Form.Label>Confirm Password</Form.Label>
+                                            <InputGroup>
+                                                <InputGroup.Text><i className="fas fa-lock" /></InputGroup.Text>
+                                                <Form.Control type="text" placeholder="Confirm Password" />
+                                            </InputGroup>
+                                        </Form.Group>
+                                    </Col>
+                                    
+                                </Row>
+                                <Row>
+                                    
                                     <Col lg={6}>
                                     <Form.Group className="mb-3">
                                             <Form.Label>Email address (Optional)</Form.Label>
@@ -75,13 +89,19 @@ export const Register = () => {
                                             
                                         </Form.Group>
                                     </Col>
-                                </Row>
-                                <Row>
-                                    <Col lg={12}>
-                                        <Form.Group className="mb-3">
+                                    <Col lg={6}>
+                                    <Form.Group className="mb-3">
                                             <Form.Label>Referral Code (Optional)</Form.Label>
                                             <Form.Control type="email" placeholder="Referral Code" />
                                         </Form.Group>
+                                   
+                                    </Col>
+                                    
+                                </Row>
+                                
+                                <Row>
+                                    <Col lg={12}>
+                                       
                                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                             <Form.Check type="checkbox" label="I Accept All Terms and Condition" />
                                         </Form.Group>

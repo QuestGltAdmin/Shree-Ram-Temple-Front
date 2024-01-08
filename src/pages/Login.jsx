@@ -39,10 +39,10 @@ export const Login = () => {
 
                       <div>
                             <Form.Group className="mb-3">
-                                <Form.Label>User Name</Form.Label>
+                                <Form.Label>Phone Number</Form.Label>
                                 <InputGroup>
-                                    <InputGroup.Text><i className="fas fa-user" /></InputGroup.Text>
-                                    <Form.Control type="text" placeholder="User Name" />
+                                    <InputGroup.Text><i className="fas fa-phone" /></InputGroup.Text>
+                                    <Form.Control type="text" placeholder="Phone Number" />
                                 </InputGroup>
                                 
                             </Form.Group>

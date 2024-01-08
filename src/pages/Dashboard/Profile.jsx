@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Table, Form, InputGroup} from 'react-bootstrap'
-import Layout from '../../Component/Layout';
+import Layoutdash from '../../Component/Layoutdash';
 
 
 const Profile = () => {
@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     <>
-      <Layout>
+      <Layoutdash>
         <section className="outer-dash-section">
 
           <Container>
@@ -32,7 +32,7 @@ const Profile = () => {
                                         <span>Change Image</span>
                                     </label>
                                     <input id="file" type="file" onchange="loadFile(event)"/>
-                                    <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="output" width="200" />
+                                    <img src="/assets/image/maharaja-agrasen.jpg" id="output" width="200" />
                                 </div>
                             </Col>
                             <Col lg={8}>
@@ -40,30 +40,24 @@ const Profile = () => {
                      
                                 <Col lg={6}>
                                     <Form.Group className="mb-3">
-                                        <Form.Control type="text"  placeholder="Name" />
+                                        <Form.Control type="text"  placeholder="Full Name" />
                                     </Form.Group>
                                 </Col>
                                 <Col lg={6}>
                                     <Form.Group className="mb-3">
-                                        <Form.Control type="email"  placeholder="Email" />
+                                        <Form.Control type="email"  placeholder="Email Address" />
                                     </Form.Group>
                                 </Col>
                                 </Row>
                                 <Row>
-                                <Col lg={6}>
-                                    <Form.Group className="mb-3">
-                                        <Form.Select aria-label="Default select example">
-                                        <option>Select Country</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                        </Form.Select>
-                                    </Form.Group>
-                                </Col>
+                                
                                 <Col lg={6}>
                                     <Form.Group className="mb-3">
                                         <Form.Control type="text"  placeholder="Phone No." />
                                     </Form.Group>
+                                </Col>
+                                <Col lg={6}>
+                                   
                                 </Col>
                          </Row>
                      
@@ -120,7 +114,7 @@ const Profile = () => {
             </Row>
           </Container>
         </section>
-      </Layout>
+      </Layoutdash>
     </>
   )
 }

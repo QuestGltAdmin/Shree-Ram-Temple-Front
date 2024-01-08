@@ -16,35 +16,25 @@ export default function Header() {
                             <Col>
                                 <div className="d-flex justify-content-between align-items-center">
                                     <Navbar.Brand href="/">
-                                        <img src="assets/img/logo.png" />
+                                        <img src="assets/images/logo.png" />
+                                        <span>श्री अग्रसेन तीर्थधाम इंदौर</span>
                                     </Navbar.Brand>
                                     
                                     <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="me-auto">
-                                        <Nav.Link href="/Dashboard"><i className="fa fa-th-large"></i> Dashboard</Nav.Link>
-                                        <Nav.Link href=""><i className="fa fa-money"></i> Buy Coin</Nav.Link>
-                                        <Nav.Link href="/Transactions"><i className="fa fa-exchange"></i> Transactions</Nav.Link>
-                                        <Nav.Link href="/Profile"><i className="fa fa-user"></i> Profile</Nav.Link>
-                                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.2">
-                                            Another action
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                        <Nav.Link href="/Dashboard"><i className="fas fa-th-large"></i> Dashboard</Nav.Link>
+                                        <Nav.Link href="/Transactions"><i className="fas fa-exchange-alt"></i> Transactions</Nav.Link>
+                                        <Nav.Link href="/Profile"><i className="fas fa-user"></i> Profile</Nav.Link>
                                         
-                                        <NavDropdown.Item href="#action/3.4">
-                                            Separated link
-                                        </NavDropdown.Item>
-                                        </NavDropdown> */}
                                         
-                                        <Nav.Link href="/"><i className="fa fa-sign-out"></i> Logout</Nav.Link>
+                                        <Nav.Link href="/"><i className="fas fa-sign-out-alt"></i> Logout</Nav.Link>
                                     </Nav>
                                     </Navbar.Collapse>
 
                                    
                                     
                                    
-                                    <Link to='/' className="ms-auto profile-dropdown"><img src="assets/img/logo.png" /> GTH4536675...</Link>
+                                    <Link to='/' className="ms-auto profile-dropdown"><img src="/assets/image/maharaja-agrasen.jpg" /> GTH4536675...</Link>
                                     <Link to='/' className="border-btn">Logout <i className="fa fa-sign-out"></i></Link>
                                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 </div>

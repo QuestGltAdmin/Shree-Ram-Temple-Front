@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Table, Form, Pagination } from 'react-bootstrap'
-import Layout from '../../Component/Layout';
+import Layoutdash from '../../Component/Layoutdash';
 
 
 const Transactions = () => {
@@ -9,7 +9,7 @@ const Transactions = () => {
 
   return (
     <>
-      <Layout>
+      <Layoutdash>
         <section className="outer-dash-section">
 
           <Container>
@@ -128,7 +128,7 @@ const Transactions = () => {
             </Row>
           </Container>
         </section>
-      </Layout>
+      </Layoutdash>
     </>
   )
 }

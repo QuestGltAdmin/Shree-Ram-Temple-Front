@@ -1,12 +1,11 @@
 import React from 'react';
-// import Footer from "./Footer";
-import Header from "./Header";
+import Headerdash from "./Headerdash";
 
-function Layout(props) {
+function Layoutdash(props) {
   return (
     <div className="dashboard-layout">
             <div className="inner-dash-bpx">
-              <Header/>
+              <Headerdash/>
               {props.children}
               {/* <Footer/> */}
             </div>
@@ -14,4 +13,4 @@ function Layout(props) {
   )
 }
 
-export default Layout
+export default Layoutdash
