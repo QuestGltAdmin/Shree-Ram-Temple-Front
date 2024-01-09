@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Table, Form, Pagination } from 'react-bootstrap'
-import Layoutdash from '../../component/Layoutdash'
+import Layoutdash from '../../component/Layoutdash';
 
 
 const Transactions = () => {

@@ -1,9 +1,63 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import { Col, Form, InputGroup, Row } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import Layout from '../component/Layout'
 
 export const Login = () => {
+    //=============== Globle vaiable ====================//
+  const navigate = useNavigate();
+  
+  //===============End of code====================//
+
+  //=============== Local vaiable ====================//
+  const [formError, setFormError] = useState("");
+  const [disable, setDisable] = useState(false);
+  const [inputValue, setInputValue] = useState({
+    phone: "",
+    password: "",
+  });
+  //===============End of code====================//
+
+  //===============Funtion for take Input====================//
+  const HandleData = (e) => {
+   setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+ };
+  //====================End of code===========================//
+
+  //========================= Handle login function =========================//
+ const HandleLogin = async () => {
+   if (!inputValue.phone) {
+     setFormError("Please enter valid phone or user name");
+   } else if (!inputValue.password) {
+     setFormError("Please enter your password!");
+   } else {
+     setDisable(true);
+     setFormError("");
+     const payload = {
+      mobile: inputValue.phone,
+      password: inputValue.password,
+     };
+     try {
+      const loginData = await axios.post(
+         "https://blockspace.donative.in:3009/login",
+         payload,
+       );              
+       if (loginData.status === 200) {
+         setDisable(false);
+         setFormError("Login successfully")
+         setTimeout(() => {
+           navigate("/dashboard");
+         }, 3000);
+       }
+     } catch (err) {
+       setDisable(false);
+       setFormError(err.response.data.message);
+     }
+   }
+ };
+ //========================= end of code =========================//
   return (
     <>
     <Layout>
@@ -42,7 +96,10 @@ export const Login = () => {
                                 <Form.Label>Phone Number</Form.Label>
                                 <InputGroup>
                                     <InputGroup.Text><i className="fas fa-phone" /></InputGroup.Text>
-                                    <Form.Control type="text" placeholder="Phone Number" />
+                                    <Form.Control type="text" placeholder="Phone Number"
+                                     name="phone"
+                                     onChange={HandleData}
+                                     value={inputValue.phone} />
                                 </InputGroup>
                                 
                             </Form.Group>
@@ -50,12 +107,20 @@ export const Login = () => {
                                 <Form.Label>Password</Form.Label>
                                 <InputGroup>
                                     <InputGroup.Text><i className="fas fa-key" /></InputGroup.Text>
-                                    <Form.Control type="text" placeholder="Password" />
+                                    <Form.Control type="text" placeholder="Password"
+                                    name="password"
+                                    onChange={HandleData}
+                                    value={inputValue.password} />
                                 </InputGroup>
                             </Form.Group>
+                            <p>{formError}</p>
                            
                             <p className='pass-line'><a href="">Forgot Password?</a></p>
-                            <button className="cmn-btn">Submit</button>
+                            <button className="cmn-btn"
+                             disabled={disable}
+                             onClick={() => {
+                               HandleLogin();
+                             }}>Submit</button>
                       </div>
                   </div>
                </Col>
