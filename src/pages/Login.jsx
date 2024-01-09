@@ -109,7 +109,7 @@ export const Login = () => {
                                 <Form.Label>Password</Form.Label>
                                 <InputGroup>
                                     <InputGroup.Text><i className="fas fa-key" /></InputGroup.Text>
-                                    <Form.Control type="text" placeholder="Password"
+                                    <Form.Control type="password" placeholder="Password"
                                     name="password"
                                     onChange={HandleData}
                                     value={inputValue.password} />

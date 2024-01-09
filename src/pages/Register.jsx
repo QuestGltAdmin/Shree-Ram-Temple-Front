@@ -169,7 +169,7 @@ export const Register = () => {
                                             <Form.Label>Password</Form.Label>
                                             <InputGroup>
                                                 <InputGroup.Text><i className="fas fa-lock" /></InputGroup.Text>
-                                                <Form.Control type="text" placeholder="Password"
+                                                <Form.Control type="password" placeholder="Password"
                                                  name="password"
                                                  onChange={HandleData}
                                                  value={inputValue.password} />
@@ -181,7 +181,7 @@ export const Register = () => {
                                             <Form.Label>Confirm Password</Form.Label>
                                             <InputGroup>
                                                 <InputGroup.Text><i className="fas fa-lock" /></InputGroup.Text>
-                                                <Form.Control type="text" placeholder="Confirm Password"
+                                                <Form.Control type="password" placeholder="Confirm Password"
                                                  name="copassword"
                                                  onChange={HandleData}
                                                  value={inputValue.copassword}
