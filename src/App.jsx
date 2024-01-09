@@ -40,7 +40,7 @@ function App() {
               </UserPrivateRoute>
             }
           />
-           <Route
+          <Route
             path="/Transactions"
             element={
               <UserPrivateRoute>
@@ -48,7 +48,7 @@ function App() {
               </UserPrivateRoute>
             }
           />
-           <Route
+          <Route
             path="/your-membership"
             element={
               <UserPrivateRoute>
