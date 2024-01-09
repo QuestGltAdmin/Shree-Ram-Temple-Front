@@ -45,6 +45,8 @@ export const Login = () => {
          payload,
        );              
        if (loginData.status === 200) {
+        localStorage.setItem("token", loginData.data.token);
+        localStorage.setItem("isUserAuthenticated", true);
          setDisable(false);
          setFormError("Login successfully")
          setTimeout(() => {
