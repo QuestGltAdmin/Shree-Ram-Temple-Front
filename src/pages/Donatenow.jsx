@@ -11,10 +11,15 @@ export const Donatenow = () => {
          <Container>
            <Row>
                <Col lg={12}>
+<<<<<<< HEAD
                   <div className="donation-box-outer">
                      <h3 class=" text-center" >Shri Agrasen tirthdham Online Donation</h3>
                     
                     <h6 class="text-center">We request you to contribute generously and invoke the divine blessings of Lord Shree Agrasen Maharaj on your family.<br/> Join hands with us in the Bhavya Agrasen tirthdham Nirman Seva!</h6>
+=======
+                  <div className="login-form-box-main">
+                      <h2>Donate Now</h2>
+>>>>>>> 205a7fb05ba318ae514b55aa78fe5efe94418123
 
                     <Row>
                        <Col lg={6}>

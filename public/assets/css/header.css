@@ -94,7 +94,7 @@ body{
 .header__bottom {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s;
+    transition:all ease-in-out .5s;
     background: #fff;
     border-bottom: 1px solid #f1f1f1;
 }
