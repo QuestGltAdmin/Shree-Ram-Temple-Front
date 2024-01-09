@@ -11,6 +11,7 @@ import Profile from "./pages/Dashboard/Profile";
 import Transactions from "./pages/Dashboard/Transactions";
 import { Membership } from "./pages/Dashboard/Membership";
 import { Donatenow } from "./pages/Donatenow";
+import UserPrivateRoute from "./PrivateRoute/PrivateRoutes";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,10 +24,38 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/donate-now" element={<Donatenow />} />
-          <Route path="/your-membership" element={<Membership />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Transactions" element={<Transactions />} />
+          <Route
+            path="/dashboard"
+            element={
+              <UserPrivateRoute>
+                <Dashboard />
+              </UserPrivateRoute>
+            }
+          />
+          <Route
+            path="/Profile"
+            element={
+              <UserPrivateRoute>
+                <Profile />
+              </UserPrivateRoute>
+            }
+          />
+           <Route
+            path="/Transactions"
+            element={
+              <UserPrivateRoute>
+                <Transactions />
+              </UserPrivateRoute>
+            }
+          />
+           <Route
+            path="/your-membership"
+            element={
+              <UserPrivateRoute>
+                <Membership />
+              </UserPrivateRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
