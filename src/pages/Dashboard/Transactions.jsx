@@ -2,10 +2,43 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Table, Form, Pagination } from 'react-bootstrap'
 import Layoutdash from '../../component/Layoutdash';
+import axios from "../../http/axios/axios_main";
 
 
 const Transactions = () => {
 
+ 
+
+  //=============== Local vaiable ====================//
+  const [referralList, setReferralList] = useState();
+    //===============End of code====================//
+
+//================== useEffect to get Token & funtion call =========================//
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    console.log(typeof storedToken); // Log the type of the token
+    getAllreferral(storedToken);
+}, []);
+ //=======================End of code===============================//
+
+
+  //=============== Funtion to get Referral list ====================//
+  const getAllreferral = async (storedToken) => {
+    try {
+      const url = "/users/my_referred_user_list";
+      const res = await axios.get(url, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${storedToken}`,
+        },
+      });
+      setReferralList(res?.data?.data);
+    console.log(res?.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+ //=======================End of code===============================//
 
   return (
     <>
@@ -42,19 +75,31 @@ const Transactions = () => {
                              <div className="table-responsive">
                              <Table  bordered >
                               <thead>
+                              {referralList === null ||
+                                referralList === undefined ||
+                                referralList === "" ||
+                                referralList.length === 0 ? (
+                                  <tr>
+                                    <td colSpan={12}>No Records Found!</td>
+                                  </tr>
+                                ) : (
+                                  ""
+                                )}
                                 <tr>
                                   <th>#</th>
                                   <th>Referred User Name</th>
                                   <th>Donate Amount</th>
                                 </tr>
                               </thead>
+                              {referralList?.map((item, index) => {
+                                return (
                               <tbody>
                                 <tr>
-                                  <td>1</td>
-                                  <td>Mark</td>
-                                  <td>1500</td>
+                                  <td>{index+1}</td>
+                                  <td>{item.fullName}</td>
+                                  <td>0</td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                   <td>2</td>
                                   <td>Jacob</td>
                                   <td>2000</td>
@@ -63,10 +108,12 @@ const Transactions = () => {
                                   <td>3</td>
                                   <td>John</td>
                                   <td>3000</td>
-                                </tr>
+                                </tr> */}
                                 
                                
                               </tbody>
+                               );
+                              })}
                             </Table>
                              </div>
                              <div className="d-flex justify-content-between outer-show-table">
