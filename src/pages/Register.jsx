@@ -16,14 +16,11 @@ export const Register = () => {
 
   //===============End of code====================//
 
-    //======================Auth States=====================//
-    const {
-      isLoading,
-      errorMsg,
-      isAuthenticated,
-      user,
-    } = useSelector((state) => state.auth);
-    //====================End of code====================//
+  //======================Auth States=====================//
+  const { isLoading, errorMsg, isAuthenticated, user } = useSelector(
+    (state) => state.auth
+  );
+  //====================End of code====================//
 
   //=============== Local vaiable ====================//
   const [formError, setFormError] = useState("");
@@ -115,7 +112,7 @@ export const Register = () => {
   return (
     <>
       <Layout>
-      <Notification
+        <Notification
           message_mo={modelMessage}
           action_mo={openModel}
           random_val={randomVal}
@@ -282,7 +279,6 @@ export const Register = () => {
                         }}
                       >
                         {isLoading ? "Please Wait..." : " Submit"}
-                       
                       </button>
                     </div>
                   </div>

@@ -32,18 +32,17 @@ export const Login = () => {
     password: "",
   });
   //===============End of code====================//
-    //===============For PopUp Modal====================//
-    const [openModel, setOpenModel] = useState(false);
-    const [modelMessage, setModelMessage] = useState("");
-    const [randomVal, setRandomVal] = useState("");
-    //===============End of code====================//
+  //===============For PopUp Modal====================//
+  const [openModel, setOpenModel] = useState(false);
+  const [modelMessage, setModelMessage] = useState("");
+  const [randomVal, setRandomVal] = useState("");
+  //===============End of code====================//
 
   //===============Funtion for take Input====================//
   const HandleData = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
   //====================End of code===========================//
-
 
   //========================= Handle login function =========================//
   const HandleLogin = async () => {
@@ -82,7 +81,7 @@ export const Login = () => {
   return (
     <>
       <Layout>
-      <Notification
+        <Notification
           message_mo={modelMessage}
           action_mo={openModel}
           random_val={randomVal}
@@ -165,7 +164,6 @@ export const Login = () => {
                         }}
                       >
                         {isLoading ? "Please Wait..." : "Submit"}
-                        
                       </button>
                     </div>
                   </div>

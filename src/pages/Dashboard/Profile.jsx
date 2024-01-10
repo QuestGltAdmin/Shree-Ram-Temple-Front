@@ -17,7 +17,7 @@ const Profile = () => {
   //=============== Globle vaiable ====================//
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user, proupdatedata,  proupdate, } = useAuth();
+  const { user, proupdatedata, proupdate } = useAuth();
 
   //===============End of code====================//
 
@@ -29,16 +29,15 @@ const Profile = () => {
     oldPassword: "",
     Newpassword: "",
     CoNewpassword: "",
-    
   });
   const [loding, setLoding] = useState(false);
   const [loding2, setLoding2] = useState(false);
   //===============End of code====================//
-    //===============For PopUp Modal====================//
-    const [openModel, setOpenModel] = useState(false);
-    const [modelMessage, setModelMessage] = useState("");
-    const [randomVal, setRandomVal] = useState("");
-    //===============End of code====================//
+  //===============For PopUp Modal====================//
+  const [openModel, setOpenModel] = useState(false);
+  const [modelMessage, setModelMessage] = useState("");
+  const [randomVal, setRandomVal] = useState("");
+  //===============End of code====================//
 
   //===============Funtion for take Input====================//
   const HandleData = (e) => {
@@ -103,7 +102,6 @@ const Profile = () => {
 
   //==================================end of code==========================//
 
-
   //========================Functions======================//
   //Function to get Profile
   useEffect(() => {
@@ -131,11 +129,11 @@ const Profile = () => {
 
   const [formData, setFormData] = useState({
     fullName: proupdate.fullName || user.fullName || "",
-    fatherName: proupdate.fatherName|| user.fatherName || "",
-    email: proupdate.email|| user.email || "",
-    businessName: proupdate.businessName|| user.businessName || "",
-    bloodGroup: proupdate.bloodGroup|| user.bloodGroup || "",
-    address: proupdate.address|| user.address || "",
+    fatherName: proupdate.fatherName || user.fatherName || "",
+    email: proupdate.email || user.email || "",
+    businessName: proupdate.businessName || user.businessName || "",
+    bloodGroup: proupdate.bloodGroup || user.bloodGroup || "",
+    address: proupdate.address || user.address || "",
     file: "",
     user_id: user._id,
     photoUrl: proupdate ? proupdate.profile : user.profile || "",
@@ -155,7 +153,6 @@ const Profile = () => {
     const value = event.target.value;
     setFormData({ ...formData, [name]: value });
     setInputdata({ ...inputdata, [name]: value });
-
   };
 
   const photoUploadHandler = (event, setState) => {
@@ -198,61 +195,54 @@ const Profile = () => {
   };
 
   const UpdateProfile = async () => {
-    
-      setFormError("");
-      try {
-        setLoding2(true);
-        newdata.append("fullName", formData.fullName);
-        newdata.append("mobile", formData.mobile);
-        newdata.append("email", formData.email);
-        newdata.append("address", formData.address);
-        newdata.append("businessName", formData.businessName);
-        newdata.append("bloodGroup", formData.bloodGroup);
-        newdata.append("fatherName", formData.fatherName);
-        newdata.append("profile", file || formData.photoUrl || "");
-        newdata.append("countryCode", formData.countryCode);
-        const api = await axiosMain.post("/users/update_user_profile", newdata, {
-          headers: {
-            "content-type": "multipart/form-data",
-            authorization: `bearer ${user.token}`,
-          },
-        });
-        console.log(api.data.data);
+    setFormError("");
+    try {
+      setLoding2(true);
+      newdata.append("fullName", formData.fullName);
+      newdata.append("mobile", formData.mobile);
+      newdata.append("email", formData.email);
+      newdata.append("address", formData.address);
+      newdata.append("businessName", formData.businessName);
+      newdata.append("bloodGroup", formData.bloodGroup);
+      newdata.append("fatherName", formData.fatherName);
+      newdata.append("profile", file || formData.photoUrl || "");
+      newdata.append("countryCode", formData.countryCode);
+      const api = await axiosMain.post("/users/update_user_profile", newdata, {
+        headers: {
+          "content-type": "multipart/form-data",
+          authorization: `bearer ${user.token}`,
+        },
+      });
+      console.log(api.data.data);
 
-        if (api.status === 200) {
-        
-          setLoding2(false);
-          dispatch(saveprofiledata(api.data.data));
-          localStorage.setItem(
-            "saveprodata",
-            JSON.stringify(api.data.data)
-          );
-
-          setModelMessage(api.data.message);
-          setOpenModel(true);
-          setTimeout(() => {
-            setRandomVal(Math.floor(Math.random() * 100 + 1));
-          }, 500);
-          setTimeout(() => {
-            window.location.reload();
-          }, 3000);
-        }
-      } catch (error) {
-       
+      if (api.status === 200) {
         setLoding2(false);
-        console.log(error);
-        setModelMessage(error.response.data.message);
+        dispatch(saveprofiledata(api.data.data));
+        localStorage.setItem("saveprodata", JSON.stringify(api.data.data));
+
+        setModelMessage(api.data.message);
         setOpenModel(true);
         setTimeout(() => {
           setRandomVal(Math.floor(Math.random() * 100 + 1));
         }, 500);
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       }
-    
+    } catch (error) {
+      setLoding2(false);
+      console.log(error);
+      setModelMessage(error.response.data.message);
+      setOpenModel(true);
+      setTimeout(() => {
+        setRandomVal(Math.floor(Math.random() * 100 + 1));
+      }, 500);
+    }
   };
   return (
     <>
       <Layoutdash>
-      <Notification
+        <Notification
           message_mo={modelMessage}
           action_mo={openModel}
           random_val={randomVal}
@@ -276,32 +266,28 @@ const Profile = () => {
                               id="file"
                               type="file"
                               onChange={(e) =>
-                                photoUploadHandler(
-                                  e,
-                                  setImageData
-                                )
+                                photoUploadHandler(e, setImageData)
                               }
                               ondragover="drag()"
                               ondrop="drop()"
                             />
-                            {proupdate.profile === null 
-                           ? (
-                            <img
-                              onError={() => {
-                                ImageHandler();
-                              }}
-                              src={ photoUrl ||"/assets/image/maharaja-agrasen.jpg"}
-                              id="output"
-                              width="200"
-                              onChange={(e) =>
-                                photoUploadHandler(
-                                  e,
-                                  setImageData
-                                )
-                              }
-                              ondragover="drag()"
-                              ondrop="drop()"
-                            />
+                            {proupdate.profile === null ? (
+                              <img
+                                onError={() => {
+                                  ImageHandler();
+                                }}
+                                src={
+                                  photoUrl ||
+                                  "/assets/image/maharaja-agrasen.jpg"
+                                }
+                                id="output"
+                                width="200"
+                                onChange={(e) =>
+                                  photoUploadHandler(e, setImageData)
+                                }
+                                ondragover="drag()"
+                                ondrop="drop()"
+                              />
                             ) : (
                               <img
                                 onError={() => {
@@ -315,17 +301,13 @@ const Profile = () => {
                                 }
                                 alt=""
                                 onChange={(e) =>
-                                  photoUploadHandler(
-                                    e,
-                                    setImageData
-                                  )
+                                  photoUploadHandler(e, setImageData)
                                 }
                                 ondragover="drag()"
                                 ondrop="drop()"
                               />
                             )}
                           </div>
-                          
                         </Col>
                         <Col lg={8}>
                           <Row>
@@ -334,10 +316,9 @@ const Profile = () => {
                                 <Form.Control
                                   type="text"
                                   placeholder="Full Name"
-        
                                   onChange={formdata}
-                                              name="fullName"
-                                              value={formData.fullName}
+                                  name="fullName"
+                                  value={formData.fullName}
                                 />
                               </Form.Group>
                             </Col>
@@ -347,8 +328,8 @@ const Profile = () => {
                                   type="text"
                                   placeholder="Phone No."
                                   disabled
-                                              name="mobile"
-                                              value={formData.mobile}
+                                  name="mobile"
+                                  value={formData.mobile}
                                 />
                               </Form.Group>
                             </Col>
@@ -360,8 +341,8 @@ const Profile = () => {
                                   type="text"
                                   placeholder="Father's Name"
                                   onChange={formdata}
-                                              name="fatherName"
-                                              value={formData.fatherName}
+                                  name="fatherName"
+                                  value={formData.fatherName}
                                 />
                               </Form.Group>
                             </Col>
@@ -371,8 +352,8 @@ const Profile = () => {
                                   type="email"
                                   placeholder="Email Address(Optional)"
                                   onChange={formdata}
-                                              name="email"
-                                              value={formData.email}
+                                  name="email"
+                                  value={formData.email}
                                 />
                               </Form.Group>
                             </Col>
@@ -418,9 +399,13 @@ const Profile = () => {
                           </Row>
 
                           <div>
-                            <button className="common-btn  m-0"  onClick={UpdateProfile}  disabled={loding2 ? "disabled" : ""}>
+                            <button
+                              className="common-btn  m-0"
+                              onClick={UpdateProfile}
+                              disabled={loding2 ? "disabled" : ""}
+                            >
                               {loding2 ? "Processing..." : "Submit"}
-                              </button>
+                            </button>
                           </div>
                         </Col>
                       </Row>
@@ -513,10 +498,7 @@ const Profile = () => {
                             ChangePassword();
                           }}
                         >
-                           {loding
-                                        ? "Processing..."
-                                        : "Update"}
-                          
+                          {loding ? "Processing..." : "Update"}
                         </button>
                       </div>
                     </div>

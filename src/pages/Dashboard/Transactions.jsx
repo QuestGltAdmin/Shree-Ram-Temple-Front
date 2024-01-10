@@ -5,7 +5,6 @@ import useAuth from "../../hooks/useAuth";
 import axios from "../../http/axios/axios_main";
 
 const Transactions = () => {
-
   const { user } = useAuth();
   //=============== Local vaiable ====================//
   const [referralList, setReferralList] = useState();
