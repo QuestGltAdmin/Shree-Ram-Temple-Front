@@ -81,13 +81,13 @@ export default function Header() {
                     </Nav>
                   </Navbar.Collapse>
 
-                  <Link to="/" className="ms-auto profile-dropdown">
+                  <Link to="/profile" className="ms-auto profile-dropdown">
                     {proupdate.profile === null ? (
                       <img src="/assets/image/maharaja-agrasen.jpg" />
                     ) : (
                       <img src={proupdate.profile} className=" m-2" />
                     )}
-                    GTH4536675...
+                    {proupdate.fullName}
                   </Link>
                   <Link
                     className="border-btn"

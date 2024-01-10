@@ -54,6 +54,7 @@ export function* userLoginSaga(action) {
 
       setTimeout(() => {
         navigate("/dashboard");
+        window.location.reload();
       }, 3000);
     } else {
       setDisable(false);
