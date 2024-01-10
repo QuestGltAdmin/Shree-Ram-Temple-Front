@@ -89,11 +89,11 @@ export function* registerSaga(action) {
     const response = yield axiosMain.post(`/signUp`, payload);
 
     if (response?.data?.status) {
-      yield call(
-        [localStorage, "setItem"],
-        "signupData",
-        JSON.stringify(response.data.data)
-      );
+      // yield call(
+      //   [localStorage, "setItem"],
+      //   "signupData",
+      //   JSON.stringify(response.data.data)
+      // );
       setModelMessage("SignUp success");
       setOpenModel(true);
       setRandomVal(Math.floor(Math.random() * 100 + 1));
@@ -112,6 +112,8 @@ export function* registerSaga(action) {
     setDisable(false);
     console.log(error);
     setModelMessage(error.response.data.message);
+    setOpenModel(true);
+      setRandomVal(Math.floor(Math.random() * 100 + 1));
     yield call(catchHandler, error, registerFail);
   }
 }
