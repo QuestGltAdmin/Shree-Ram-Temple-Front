@@ -2,13 +2,16 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../component/Layout";
 import { Notification } from "../Notifications/Notification";
+import { userLoginSaga } from "../store/reducers/authReducer";
 
 export const Login = () => {
   //=============== Globle vaiable ====================//
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   //===============End of code====================//
 
@@ -69,6 +72,41 @@ export const Login = () => {
       }
     }
   };
+  //========================= end of code =========================//
+
+  //========================= Handle login function =========================//
+  // const HandleLogin = async () => {
+  //   if (!inputValue.phone) {
+  //     setFormError("Please enter valid phone or user name");
+  //   } else if (!inputValue.password) {
+  //     setFormError("Please enter your password!");
+  //   } else {
+  //     setDisable(true);
+  //     setFormError("");
+  //     const payload = {
+  //       mobile: inputValue.phone,
+  //       password: inputValue.password,
+  //     };
+  //     try {
+  //       console.log("here");
+  //       dispatch(
+  //         userLoginSaga({
+  //           payload,
+  //           navigate,
+  //           setDisable,
+  //           setModelMessage,
+  //           setOpenModel,
+  //           setRandomVal,
+  //         })
+  //       );
+  //     } catch (err) {
+  //       setDisable(false);
+  //       setModelMessage(err.response.data.message);
+  //       setOpenModel(true);
+  //       setRandomVal(Math.floor(Math.random() * 100 + 1));
+  //     }
+  //   }
+  // };
   //========================= end of code =========================//
   return (
     <>
