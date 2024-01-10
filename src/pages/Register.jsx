@@ -8,13 +8,22 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Notification } from "../Notifications/Notification";
 import { registerSaga } from "../store/reducers/authReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 export const Register = () => {
   //=============== Globle vaiable ====================//
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   //===============End of code====================//
+
+    //======================Auth States=====================//
+    const {
+      isLoading,
+      errorMsg,
+      isAuthenticated,
+      user,
+    } = useSelector((state) => state.auth);
+    //====================End of code====================//
 
   //=============== Local vaiable ====================//
   const [formError, setFormError] = useState("");
@@ -267,12 +276,13 @@ export const Register = () => {
                       </Row>
                       <button
                         className="cmn-btn"
-                        disabled={disable}
+                        disabled={isLoading ? "disabled" : ""}
                         onClick={() => {
                           HandleReister();
                         }}
                       >
-                        Submit
+                        {isLoading ? "Please Wait..." : " Submit"}
+                       
                       </button>
                     </div>
                   </div>

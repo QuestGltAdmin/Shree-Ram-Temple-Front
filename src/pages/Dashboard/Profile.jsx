@@ -31,6 +31,8 @@ const Profile = () => {
     CoNewpassword: "",
     
   });
+  const [loding, setLoding] = useState(false);
+  const [loding2, setLoding2] = useState(false);
   //===============End of code====================//
     //===============For PopUp Modal====================//
     const [openModel, setOpenModel] = useState(false);
@@ -46,20 +48,20 @@ const Profile = () => {
 
   //====================Change Password Function====================//
   const ChangePassword = async () => {
-    setDisable(true);
+    setLoding(true);
     try {
       if (
         inputValue.oldPassword === "" ||
         inputValue.Newpassword === "" ||
         inputValue.CoNewpassword === ""
       ) {
-        setDisable(false);
+        setLoding(false);
 
         setFormError("Please Fill All values");
         return;
       }
       if (inputValue.Newpassword !== inputValue.CoNewpassword) {
-        setDisable(false);
+        setLoding(false);
 
         setFormError("Password & Confirm Password is not Match");
         return;
@@ -78,16 +80,16 @@ const Profile = () => {
       });
       console.log(res);
       if (res.status === 200) {
-        setDisable(false);
+        setLoding(false);
 
         setFormError(res.data.message);
       } else {
-        setDisable(false);
+        setLoding(false);
 
         setFormError(res.message);
       }
     } catch (error) {
-      setDisable(false);
+      setLoding(false);
 
       console.log(error);
       setFormError(error.response.data.message);
@@ -199,8 +201,7 @@ const Profile = () => {
     
       setFormError("");
       try {
-       
-
+        setLoding2(true);
         newdata.append("fullName", formData.fullName);
         newdata.append("mobile", formData.mobile);
         newdata.append("email", formData.email);
@@ -220,7 +221,7 @@ const Profile = () => {
 
         if (api.status === 200) {
         
-
+          setLoding2(false);
           dispatch(saveprofiledata(api.data.data));
           localStorage.setItem(
             "saveprodata",
@@ -238,7 +239,7 @@ const Profile = () => {
         }
       } catch (error) {
        
-
+        setLoding2(false);
         console.log(error);
         setModelMessage(error.response.data.message);
         setOpenModel(true);
@@ -417,7 +418,9 @@ const Profile = () => {
                           </Row>
 
                           <div>
-                            <button className="common-btn  m-0"  onClick={UpdateProfile}>Submit</button>
+                            <button className="common-btn  m-0"  onClick={UpdateProfile}  disabled={loding2 ? "disabled" : ""}>
+                              {loding2 ? "Processing..." : "Submit"}
+                              </button>
                           </div>
                         </Col>
                       </Row>
@@ -505,12 +508,15 @@ const Profile = () => {
                       <div>
                         <button
                           className="common-btn m-0"
-                          disabled={disable}
+                          disabled={loding ? "disabled" : ""}
                           onClick={() => {
                             ChangePassword();
                           }}
                         >
-                          Update
+                           {loding
+                                        ? "Processing..."
+                                        : "Update"}
+                          
                         </button>
                       </div>
                     </div>

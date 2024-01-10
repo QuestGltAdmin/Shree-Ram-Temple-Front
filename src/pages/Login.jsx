@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../component/Layout";
 import { Notification } from "../Notifications/Notification";
@@ -12,6 +12,15 @@ export const Login = () => {
   //=============== Globle vaiable ====================//
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  //====================Auth Satate====================//
+  const {
+    isLoading,
+    errorMsg,
+    isAuthenticated,
+    isForgotPasswordSuccess,
+    user,
+  } = useSelector((state) => state.auth);
+  //====================End of code====================//
 
   //===============End of code====================//
 
@@ -150,12 +159,13 @@ export const Login = () => {
                       </p>
                       <button
                         className="cmn-btn"
-                        disabled={disable}
+                        disabled={isLoading ? "disabled" : ""}
                         onClick={() => {
                           HandleLogin();
                         }}
                       >
-                        Submit
+                        {isLoading ? "Please Wait..." : "Submit"}
+                        
                       </button>
                     </div>
                   </div>
