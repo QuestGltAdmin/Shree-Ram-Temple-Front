@@ -49,7 +49,7 @@ export function* userLoginSaga(action) {
       setRandomVal(Math.floor(Math.random() * 100 + 1));
 
       setTimeout(() => {
-        navigate("/user-dashboard");
+        navigate("/dashboard");
       }, 3000);
     } else {
       setDisable(false);
