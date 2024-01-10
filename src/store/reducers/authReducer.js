@@ -63,7 +63,7 @@ const authSlice = createSlice({
         ...state,
         isLoading: false,
         isUserAuthenticated: true,
-        // proupdate : action.payload
+        proupdate : action.payload
       };
     },
 
