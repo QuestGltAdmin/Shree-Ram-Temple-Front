@@ -76,16 +76,13 @@ export function* registerSaga(action) {
   const {
     payload,
     navigate,
-    // setModelMessage,
-    setErrorMsg,
-    setSuccessMsg,
-    studentName,
-    // setOpenModel,
-    // setRandomVal,
+    setModelMessage,
+    setOpenModel,
+    setRandomVal,
     setDisable,
   } = action.payload;
   try {
-    const response = yield axiosMain.post(`/signup`, payload);
+    const response = yield axiosMain.post(`/signUp`, payload);
 
     if (response?.data?.status) {
       yield call(
@@ -93,28 +90,24 @@ export function* registerSaga(action) {
         "signupData",
         JSON.stringify(response.data.data)
       );
-      yield put(setUserName(studentName));
-      // localStorage.setItem("StudentName" , studentName)
-      setSuccessMsg("SignUp success Please verify your Otp...");
-      // setOpenModel(true);
-      // setRandomVal(Math.floor(Math.random() * 100 + 1));
+      setModelMessage("SignUp success");
+      setOpenModel(true);
+      setRandomVal(Math.floor(Math.random() * 100 + 1));
       setTimeout(() => {
-        navigate("/signup-otp");
+        navigate("/login");
       }, 3000);
       yield put(registerSuccess(response.data.data));
     } else {
       setDisable(false);
-      setErrorMsg("Somthing went wrong..");
-      // setOpenModel(true);
-      // setRandomVal(Math.floor(Math.random() * 100 + 1));
+      setModelMessage("Somthing went wrong..");
+      setOpenModel(true);
+      setRandomVal(Math.floor(Math.random() * 100 + 1));
       yield put(registerFail("Something went wrong! Please try again."));
     }
   } catch (error) {
     setDisable(false);
     console.log(error);
-    setErrorMsg(error.response.data.message);
-    // setOpenModel(true);
-    // setRandomVal(Math.floor(Math.random() * 100 + 1));
+    setModelMessage(error.response.data.message);
     yield call(catchHandler, error, registerFail);
   }
 }

@@ -35,6 +35,7 @@ export const Login = () => {
   };
   //====================End of code===========================//
 
+
   //========================= Handle login function =========================//
   const HandleLogin = async () => {
     if (!inputValue.phone) {
@@ -49,21 +50,17 @@ export const Login = () => {
         password: inputValue.password,
       };
       try {
-        const loginData = await axios.post(
-          "https://blockspace.donative.in:3009/login",
-          payload
+        console.log("here");
+        dispatch(
+          userLoginSaga({
+            payload,
+            navigate,
+            setDisable,
+            setModelMessage,
+            setOpenModel,
+            setRandomVal,
+          })
         );
-        if (loginData.status === 200) {
-          localStorage.setItem("token", loginData.data.token);
-          localStorage.setItem("isUserAuthenticated", true);
-          setDisable(false);
-          setModelMessage("Login successful");
-      setOpenModel(true);
-      setRandomVal(Math.floor(Math.random() * 100 + 1));
-          setTimeout(() => {
-            navigate("/dashboard");
-          }, 3000);
-        }
       } catch (err) {
         setDisable(false);
         setModelMessage(err.response.data.message);
@@ -72,41 +69,6 @@ export const Login = () => {
       }
     }
   };
-  //========================= end of code =========================//
-
-  //========================= Handle login function =========================//
-  // const HandleLogin = async () => {
-  //   if (!inputValue.phone) {
-  //     setFormError("Please enter valid phone or user name");
-  //   } else if (!inputValue.password) {
-  //     setFormError("Please enter your password!");
-  //   } else {
-  //     setDisable(true);
-  //     setFormError("");
-  //     const payload = {
-  //       mobile: inputValue.phone,
-  //       password: inputValue.password,
-  //     };
-  //     try {
-  //       console.log("here");
-  //       dispatch(
-  //         userLoginSaga({
-  //           payload,
-  //           navigate,
-  //           setDisable,
-  //           setModelMessage,
-  //           setOpenModel,
-  //           setRandomVal,
-  //         })
-  //       );
-  //     } catch (err) {
-  //       setDisable(false);
-  //       setModelMessage(err.response.data.message);
-  //       setOpenModel(true);
-  //       setRandomVal(Math.floor(Math.random() * 100 + 1));
-  //     }
-  //   }
-  // };
   //========================= end of code =========================//
   return (
     <>

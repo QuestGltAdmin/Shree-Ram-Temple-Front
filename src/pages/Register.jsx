@@ -7,9 +7,12 @@ import Layout from "../component/Layout";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Notification } from "../Notifications/Notification";
+import { registerSaga } from "../store/reducers/authReducer";
+import { useDispatch } from "react-redux";
 export const Register = () => {
   //=============== Globle vaiable ====================//
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   //===============End of code====================//
 
@@ -79,19 +82,16 @@ export const Register = () => {
         referral_from: inputValue.referral,
       };
       try {
-        const loginData = await axios.post(
-          "https://blockspace.donative.in:3009/signUp",
-          payload
+        dispatch(
+          registerSaga({
+            payload,
+            navigate,
+            setModelMessage,
+            setOpenModel,
+            setRandomVal,
+            setDisable,
+          })
         );
-        if (loginData.status === 200) {
-          setDisable(false);
-          setModelMessage("Register successfully");
-          setOpenModel(true);
-          setRandomVal(Math.floor(Math.random() * 100 + 1));
-          setTimeout(() => {
-            navigate("/login");
-          }, 3000);
-        }
       } catch (err) {
         console.log(err);
         setDisable(false);
