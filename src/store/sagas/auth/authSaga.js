@@ -39,7 +39,11 @@ export function* userLoginSaga(action) {
         "userData",
         JSON.stringify(response.data.data)
       );
-
+      yield call(
+        setItemToLocalStorage,
+        "saveprodata",
+        JSON.stringify(response.data.data)
+      );
       yield put(userloginSuccess(response.data.data));
 
       sessionStorage.setItem("jwt", "enable");

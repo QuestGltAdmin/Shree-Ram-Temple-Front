@@ -6,7 +6,7 @@ const isUserAuthenticated = localStorage.getItem("isUserAuthenticated");
 const userData = localStorage.getItem("userData");
 
 const signupData = localStorage.getItem("signupData");
-
+const proupdatedata = localStorage.getItem("saveprodata");
 const authSlice = createSlice({
   name: "auth",
   initialState: {
@@ -14,6 +14,7 @@ const authSlice = createSlice({
     isAuthenticated: !!isAuthenticated ? true : false,
     isUserAuthenticated: !!isUserAuthenticated ? true : false,
     user: !!userData ? JSON.parse(userData) : {},
+    proupdate: !!proupdatedata ? JSON.parse(proupdatedata) : {},
     signupData: !!signupData ? JSON.parse(signupData) : {},
     authToken: "",
     errorMsg: "",
