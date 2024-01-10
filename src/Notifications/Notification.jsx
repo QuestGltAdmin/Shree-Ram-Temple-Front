@@ -38,7 +38,7 @@ export const Notification = (props) => {
           className="modal-comming-soon extention-modal"
           style={{}}
         >
-          <Modal.Header style={{borderBottom:"1px solid #a77327"}}closeButton={handleCommonModel}></Modal.Header>
+          <Modal.Header style={{borderBottom:"1px solid #d4600b"}}closeButton={handleCommonModel}></Modal.Header>
           <Modal.Body >
             <h4 className="color-white text-center"> {props.message_mo}</h4>
           </Modal.Body>
