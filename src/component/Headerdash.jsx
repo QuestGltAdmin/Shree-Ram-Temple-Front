@@ -35,7 +35,9 @@ export default function Header() {
                                    
                                     
                                    
-                                    <Link to='/' className="ms-auto profile-dropdown"><img src="/assets/image/maharaja-agrasen.jpg" /> GTH4536675...</Link>
+                                    <Link to='/' className="ms-auto profile-dropdown">
+                                        <img src="/assets/image/maharaja-agrasen.jpg" />
+                                     GTH4536675...</Link>
                                     <Link to='/' className="border-btn">Logout <i className="fa fa-sign-out"></i></Link>
                                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 </div>
