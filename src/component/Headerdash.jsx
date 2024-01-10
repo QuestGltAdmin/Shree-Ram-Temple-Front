@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Container, Nav, Button, Col, Row,NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import { Notification } from "../Notifications/Notification";
+import { logout } from "../store/reducers/authReducer";
 
 
 export default function Header() {
+  //====================Global variable====================//
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {  user, proupdate } = useAuth();
+
+  //====================End of code====================//
+//===============For PopUp Modal====================//
+const [openModel, setOpenModel] = useState(false);
+const [modelMessage, setModelMessage] = useState("");
+const [randomVal, setRandomVal] = useState("");
+//===============End of code====================//
+  //====================Funtion For Logout====================//
+  const HandleLogout = () => {
+    setModelMessage("Logged Out Successfully");
+    setOpenModel(true);
+    setRandomVal(Math.floor(Math.random() * 100 + 1));
+    setTimeout(() => {
+      dispatch(logout());
+      navigate("/");
+    }, 2000);
+  };
+  //====================End of code====================//
 
 
     return (
         <>
+         <Notification
+          message_mo={modelMessage}
+          action_mo={openModel}
+          random_val={randomVal}
+        />
             <header className="main-header login-header-home">
                 <Navbar expand="lg" sticky="top">
                     <Container fluid>
@@ -28,7 +59,9 @@ export default function Header() {
                                         <Nav.Link href="/Profile"><i className="fas fa-user"></i> Profile</Nav.Link>
                                         
                                         
-                                        <Nav.Link href="/"><i className="fas fa-sign-out-alt"></i> Logout</Nav.Link>
+                                        <Nav.Link onClick={(e) => {
+                          HandleLogout();
+                        }}><i className="fas fa-sign-out-alt"></i> Logout</Nav.Link>
                                     </Nav>
                                     </Navbar.Collapse>
 
@@ -36,9 +69,20 @@ export default function Header() {
                                     
                                    
                                     <Link to='/' className="ms-auto profile-dropdown">
-                                        <img src="/assets/image/maharaja-agrasen.jpg" />
+                                        
+
+                                        {proupdate.profile ===
+                    null ? (
+                      <img src="/assets/image/maharaja-agrasen.jpg" />
+                    ) : (
+                      <img src={proupdate.profile} className=" m-2" />
+                    )}
+
+
                                      GTH4536675...</Link>
-                                    <Link to='/' className="border-btn">Logout <i className="fa fa-sign-out"></i></Link>
+                                    <Link  className="border-btn" onClick={(e) => {
+                          HandleLogout();
+                        }}>Logout <i className="fa fa-sign-out"></i></Link>
                                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 </div>
                             </Col>
