@@ -4,6 +4,7 @@ import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Layout from "../component/Layout";
+import { Notification } from "../Notifications/Notification";
 
 export const Login = () => {
   //=============== Globle vaiable ====================//
@@ -19,6 +20,11 @@ export const Login = () => {
     password: "",
   });
   //===============End of code====================//
+    //===============For PopUp Modal====================//
+    const [openModel, setOpenModel] = useState(false);
+    const [modelMessage, setModelMessage] = useState("");
+    const [randomVal, setRandomVal] = useState("");
+    //===============End of code====================//
 
   //===============Funtion for take Input====================//
   const HandleData = (e) => {
@@ -48,14 +54,18 @@ export const Login = () => {
           localStorage.setItem("token", loginData.data.token);
           localStorage.setItem("isUserAuthenticated", true);
           setDisable(false);
-          setFormError("Login successfully");
+          setModelMessage("Login successful");
+      setOpenModel(true);
+      setRandomVal(Math.floor(Math.random() * 100 + 1));
           setTimeout(() => {
             navigate("/dashboard");
           }, 3000);
         }
       } catch (err) {
         setDisable(false);
-        setFormError(err.response.data.message);
+        setModelMessage(err.response.data.message);
+        setOpenModel(true);
+        setRandomVal(Math.floor(Math.random() * 100 + 1));
       }
     }
   };
@@ -63,6 +73,11 @@ export const Login = () => {
   return (
     <>
       <Layout>
+      <Notification
+          message_mo={modelMessage}
+          action_mo={openModel}
+          random_val={randomVal}
+        />
         <section className="login-header-strip">
           <Container>
             <Row>
