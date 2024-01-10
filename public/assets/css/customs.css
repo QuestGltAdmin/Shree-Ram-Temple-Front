@@ -283,6 +283,31 @@ justify-content: center;
 font-style: italic;
 font-weight: 700;
 }
+.react-tel-input.input-group{
+
+}
+
+.react-tel-input.input-group .form-control {
+    border: 2px solid #d4600b;
+    padding: 10px 15px;
+    box-shadow: none !important;
+    min-height: 47px;
+    border-radius: 5px !important;
+    padding-left: 75px;
+    font-size: 16px;
+}
+.react-tel-input.input-group .flag-dropdown {
+    border: 2px solid #d4600b !important;
+    color: #d4600b;
+    border-right: 0;
+    min-width: 50px;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 5px 0 0 5px !important;
+}
+.react-tel-input.input-group .flag-dropdown .selected-flag {
+    min-width: 70px;
+}
 
 @media (max-width: 992px){
     .donation-box-outer h3 {

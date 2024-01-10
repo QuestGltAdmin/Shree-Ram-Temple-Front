@@ -169,24 +169,15 @@ export const Register = () => {
                         <Col lg={6}>
                           <Form.Group className="mb-3">
                             <Form.Label>Phone Number</Form.Label>
-                            <InputGroup>
-                              <InputGroup.Text>
-                                <i className="fas fa-phone" />
-                                {/* <Form.Control type="text" placeholder="Phone Number" 
-                                                name="phone"
-                                                onChange={HandleData}
-                                                value={inputValue.phone}
-                                                /> */}
-
-                                <PhoneInput
-                                  country={inputValue.countryCode}
+                            <PhoneInput
+                                 className="input-group"
+                                 country={"in"}
                                   name="phoneNumber"
                                   value={phoneNumber}
                                   onChange={HandelPhoneNo}
                                   placeholder="Phone Number"
                                 />
-                              </InputGroup.Text>
-                            </InputGroup>
+                           
                           </Form.Group>
                         </Col>
                       </Row>
