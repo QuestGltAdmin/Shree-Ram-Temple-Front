@@ -12,7 +12,7 @@ const Profile = () => {
 
   //=============== Globle vaiable ====================//
   const navigate = useNavigate();
-
+  const { user } = useAuth();
   //===============End of code====================//
 
   //=============== Local vaiable ====================//
@@ -23,15 +23,7 @@ const Profile = () => {
     Newpassword: "",
     CoNewpassword: "",
   });
-  const [token, setToke] = useState();
   //===============End of code====================//
-
-  //================== useEffect to get Token =========================//
-  useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    setToke(storedToken);
-  }, []);
-  //=======================End of code===============================//
 
   //===============Funtion for take Input====================//
   const HandleData = (e) => {
@@ -68,7 +60,7 @@ const Profile = () => {
       const res = await axiosMain.post(url, payload, {
         headers: {
           "Content-Type": "application/json",
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${user.token}`,
         },
       });
       console.log(res);

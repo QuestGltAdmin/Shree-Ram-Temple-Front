@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Table, Form, Pagination } from "react-bootstrap";
 import Layoutdash from "../../component/Layoutdash";
+import useAuth from "../../hooks/useAuth";
 import axios from "../../http/axios/axios_main";
 
 const Transactions = () => {
+
+  const { user } = useAuth();
   //=============== Local vaiable ====================//
   const [referralList, setReferralList] = useState();
   //===============End of code====================//
 
-  //================== useEffect to get Token & funtion call =========================//
+  //================== useEffect for funtion call =========================//
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    console.log(typeof storedToken); // Log the type of the token
-    getAllreferral(storedToken);
+    getAllreferral();
   }, []);
   //=======================End of code===============================//
 
   //=============== Funtion to get Referral list ====================//
-  const getAllreferral = async (storedToken) => {
+  const getAllreferral = async () => {
     try {
       const url = "/users/my_referred_user_list";
       const res = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",
-          authorization: `bearer ${storedToken}`,
+          authorization: `bearer ${user.token}`,
         },
       });
       setReferralList(res?.data?.data);
