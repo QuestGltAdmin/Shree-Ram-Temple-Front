@@ -34,6 +34,7 @@ export const Login = () => {
     countryCode: "",
   });
   const [phoneNumber, setPhoneNumber] = useState();
+  const [eyeShow, setEyeShow] = useState(false);
 
   //===============End of code====================//
   //===============For PopUp Modal====================//
@@ -162,12 +163,23 @@ export const Login = () => {
                             <i className="fas fa-key" />
                           </InputGroup.Text>
                           <Form.Control
-                            type="password"
+                            type={`${eyeShow ? "text" : "password"}`}
                             placeholder="Password"
                             name="password"
                             onChange={HandleData}
                             value={inputValue.password}
                           />
+                          <InputGroup.Text
+                                onClick={() => {
+                                  setEyeShow(!eyeShow);
+                                }}
+                              >
+                                {eyeShow ? (
+                                  <i className="fa fa-eye"></i>
+                                ) : (
+                                  <i className="fa fa-eye-slash"></i>
+                                )}
+                              </InputGroup.Text>
                         </InputGroup>
                       </Form.Group>
                       <p>{formError}</p>
