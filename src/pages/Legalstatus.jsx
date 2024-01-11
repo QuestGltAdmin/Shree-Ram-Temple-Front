@@ -31,7 +31,7 @@ export const Legalstatus = () => {
                             <h4>Agrawal Tirthdham Foundation Legal Documents</h4>
                             <p>We fromAgrawal Tirthdham Foundation are pleased to build the BHAVYA & DIVYA SHRI RAM TEMPLE at Indore, Madhya Pradesh</p>
                             <ul>
-                                <li>We fromAgrawal Tirthdham Foundation are pleased to build the BHAVYA & DIVYA SHRI RAM TEMPLE at Indore <a href="">View Document <i class="fas fa-long-arrow-alt-right"></i></a></li>
+                                <li>Document XYZ <a href="">View Document <i class="fas fa-long-arrow-alt-right"></i></a></li>
                                 <li>Document XYZ <a href="">View Document <i class="fas fa-long-arrow-alt-right"></i></a></li>
                                 <li>Document XYZ <a href="">View Document <i class="fas fa-long-arrow-alt-right"></i></a></li>
                                 <li>Document XYZ <a href="">View Document <i class="fas fa-long-arrow-alt-right"></i></a></li>
