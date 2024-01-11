@@ -31,6 +31,7 @@ export const Login = () => {
   const [inputValue, setInputValue] = useState({
     phone: "",
     password: "",
+    countryCode: "",
   });
   const [phoneNumber, setPhoneNumber] = useState();
 
@@ -76,6 +77,7 @@ export const Login = () => {
       const payload = {
         mobile: inputValue.phone,
         password: inputValue.password,
+        countryCode: inputValue.countryCode,
       };
       try {
         console.log("here");
