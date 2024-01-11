@@ -487,6 +487,7 @@ max-width: 590px;
     font-weight: 400;
     min-width: 190px;
     margin-left: 30px;
+    text-align: right;
 }
 .board-member-sec{
     padding: 40px 0;
