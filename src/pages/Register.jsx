@@ -196,9 +196,6 @@ export const Register = () => {
                                 onChange={HandleData}
                                 value={inputValue.password}
                               />
-                              <InputGroup.Text>
-                                <i className="fas fa-eye" />
-                              </InputGroup.Text>
                             </InputGroup>
                           </Form.Group>
                         </Col>
@@ -216,9 +213,6 @@ export const Register = () => {
                                 onChange={HandleData}
                                 value={inputValue.copassword}
                               />
-                              <InputGroup.Text>
-                              <i className="fas fa-eye" />
-                            </InputGroup.Text>
                             </InputGroup>
                           </Form.Group>
                         </Col>

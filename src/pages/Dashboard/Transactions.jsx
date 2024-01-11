@@ -68,22 +68,22 @@ const Transactions = () => {
                           <div className="table-responsive">
                             <Table bordered>
                               <thead>
-                                {referralList === null ||
-                                referralList === undefined ||
-                                referralList === "" ||
-                                referralList.length === 0 ? (
-                                  <tr>
-                                    <td colSpan={12}>No Records Found!</td>
-                                  </tr>
-                                ) : (
-                                  ""
-                                )}
                                 <tr>
                                   <th>#</th>
                                   <th>Referred User Name</th>
                                   <th>Donate Amount</th>
                                 </tr>
                               </thead>
+                              {referralList === null ||
+                                referralList === undefined ||
+                                referralList === "" ||
+                                referralList.length === 0 ? (
+                                  <tr>
+                                    <td >No Records Found!</td>
+                                  </tr>
+                                ) : (
+                                  ""
+                                )}
                               {referralList?.map((item, index) => {
                                 return (
                                   <tbody>
