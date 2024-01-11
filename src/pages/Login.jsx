@@ -86,7 +86,7 @@ export const Login = () => {
           action_mo={openModel}
           random_val={randomVal}
         />
-        <section className="login-header-strip">
+        {/* <section className="login-header-strip">
           <Container>
             <Row>
               <Col>
@@ -100,7 +100,7 @@ export const Login = () => {
               </Col>
             </Row>
           </Container>
-        </section>
+        </section> */}
         <section className="form-login-sec">
           <Container>
             <div className="outer-box-login">

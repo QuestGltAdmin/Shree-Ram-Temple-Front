@@ -55,11 +55,13 @@
 a{
     text-decoration: none !important;
 }
-.form-login-sec{
-    padding: 80px 0;
+.form-login-sec {
+    padding: 30px 0;
 }
-.outer-box-login{
+.outer-box-login {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    max-width: 1070px;
+    margin: 0 auto;
 }
 .login-form-box-main {
     padding: 30px 40px 30px 20px;
@@ -70,13 +72,13 @@ a{
     object-fit: cover;
     object-position: center;
 }
-.login-form-box-main h2{
+.login-form-box-main h2 {
     color: #363636;
     font-weight: 600;
     margin: 0;
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .login-form-box-main p{
     font-size: 15px;
