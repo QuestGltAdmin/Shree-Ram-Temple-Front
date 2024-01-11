@@ -144,18 +144,17 @@ export const Login = () => {
                     <p>Please Provide Your Valid Credentials</p>
 
                     <div>
-                    <Form.Group className="mb-3">
-                            <Form.Label>Phone Number</Form.Label>
-                            <PhoneInput
-                                 className="input-group"
-                                 country={"in"}
-                                  name="phoneNumber"
-                                  value={phoneNumber}
-                                  onChange={HandelPhoneNo}
-                                  placeholder="Phone Number"
-                                />
-                           
-                          </Form.Group>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Phone Number</Form.Label>
+                        <PhoneInput
+                          className="input-group"
+                          country={"in"}
+                          name="phoneNumber"
+                          value={phoneNumber}
+                          onChange={HandelPhoneNo}
+                          placeholder="Phone Number"
+                        />
+                      </Form.Group>
                       <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
                         <InputGroup>
@@ -170,16 +169,16 @@ export const Login = () => {
                             value={inputValue.password}
                           />
                           <InputGroup.Text
-                                onClick={() => {
-                                  setEyeShow(!eyeShow);
-                                }}
-                              >
-                                {eyeShow ? (
-                                  <i className="fa fa-eye"></i>
-                                ) : (
-                                  <i className="fa fa-eye-slash"></i>
-                                )}
-                              </InputGroup.Text>
+                            onClick={() => {
+                              setEyeShow(!eyeShow);
+                            }}
+                          >
+                            {eyeShow ? (
+                              <i className="fa fa-eye"></i>
+                            ) : (
+                              <i className="fa fa-eye-slash"></i>
+                            )}
+                          </InputGroup.Text>
                         </InputGroup>
                       </Form.Group>
                       <p>{formError}</p>

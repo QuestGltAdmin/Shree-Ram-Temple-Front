@@ -175,14 +175,13 @@ export const Register = () => {
                           <Form.Group className="mb-3">
                             <Form.Label>Phone Number</Form.Label>
                             <PhoneInput
-                                 className="input-group"
-                                 country={"in"}
-                                  name="phoneNumber"
-                                  value={phoneNumber}
-                                  onChange={HandelPhoneNo}
-                                  placeholder="Phone Number"
-                                />
-                           
+                              className="input-group"
+                              country={"in"}
+                              name="phoneNumber"
+                              value={phoneNumber}
+                              onChange={HandelPhoneNo}
+                              placeholder="Phone Number"
+                            />
                           </Form.Group>
                         </Col>
                       </Row>
@@ -201,7 +200,7 @@ export const Register = () => {
                                 onChange={HandleData}
                                 value={inputValue.password}
                               />
-                               <InputGroup.Text
+                              <InputGroup.Text
                                 onClick={() => {
                                   setEyeShow(!eyeShow);
                                 }}
@@ -213,7 +212,6 @@ export const Register = () => {
                                 )}
                               </InputGroup.Text>
                             </InputGroup>
-                           
                           </Form.Group>
                         </Col>
                         <Col lg={6}>
@@ -224,7 +222,7 @@ export const Register = () => {
                                 <i className="fas fa-lock" />
                               </InputGroup.Text>
                               <Form.Control
-                               type={`${eyeShow1 ? "text" : "password"}`}
+                                type={`${eyeShow1 ? "text" : "password"}`}
                                 placeholder="Confirm Password"
                                 name="copassword"
                                 onChange={HandleData}
