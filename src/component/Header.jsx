@@ -149,7 +149,7 @@ const Header = () => {
                     <NavDropdown.Item href="">Board Members</NavDropdown.Item> */}
                   </NavDropdown>
                   <Nav.Link href="/board-member">Board Members</Nav.Link>
-                  {/* <Nav.Link href="">Contact Us</Nav.Link> */}
+                  <Nav.Link href="/contact-us">Contact Us</Nav.Link>
 
                   <div className="nav-right">
                     <a href="/donate-now" class="cmn-btn style--three">

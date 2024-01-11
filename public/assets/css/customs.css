@@ -515,6 +515,64 @@ max-width: 590px;
     line-height: 1.4;
     font-size:18px;
 }
+.contact-forms{
+    padding-right: 50px;
+    border-right: 1px solid #e7e7e7;
+}
+.contact-forms .content h3{
+    color: #363636;
+    font-weight: 600;
+    margin: 0;
+    line-height: normal;
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+.contact-forms .content .maps-area{
+overflow: hidden;
+}
+.contact-form-area{
+    padding: 50px 0;
+}
+.contact-form-area .address-info {
+    padding-left: 50px;
+}
+.contact-form-area .address-info ul{
+    padding: 0;
+    margin: 0;
+}
+.contact-form-area .address-info ul li{
+    list-style: none;
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.contact-form-area .address-info .address-items ul li i {
+    display: inline-block;
+    font-size: 30px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    background: #fafafa;
+    line-height: 80px;
+    margin-right: 25px;
+    color: #e64d0c;
+    border: 1px dashed #e64d0c;
+    border-radius: 50%;
+    min-width: 80px;
+}
+.contact-form-area .address-info .address-items ul li p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #232323;
+    max-width: 75%;
+}
+.contact-form-area .address-info .address-items ul li p span {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+}
+
 
 @media (max-width: 992px){
     .legal-box-outer h3 {
@@ -540,5 +598,39 @@ max-width: 590px;
     .board-member-outer {
         padding: 15px;
         margin: 10px 0;
+    }
+    .contact-forms {
+        padding-right: 10px;
+        border-right: none;
+    }
+    .contact-form-area {
+        padding: 25px 0;
+    }
+    .contact-forms .content h3 {
+        font-size: 20px;
+    }
+    .contact-form-area .address-info {
+        padding-left: 10px;
+    }
+    .contact-form-area .address-info ul li {
+        display: block;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .contact-form-area .address-info .address-items ul li p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+    .contact-form-area .address-info .address-items ul li p span {
+        font-size: 12px;
+    }
+    .contact-form-area .address-info .address-items ul li i {
+        font-size: 24px;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        margin-right: 0;
+        min-width: auto;
+        margin-bottom: 15px;
     }
 }

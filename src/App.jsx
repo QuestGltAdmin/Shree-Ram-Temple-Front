@@ -16,6 +16,7 @@ import { Aboutus } from "./pages/Aboutus";
 import { Agrawalfoundation } from "./pages/Agrawalfoundation";
 import { Legalstatus } from "./pages/Legalstatus";
 import { Boardmember } from "./pages/Boardmember";
+import { Contactus } from "./pages/Contactus";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          
+
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -33,6 +34,7 @@ function App() {
           <Route path="/agrawal-foundation" element={<Agrawalfoundation />} />
           <Route path="/legal-status" element={<Legalstatus />} />
           <Route path="/board-member" element={<Boardmember />} />
+          <Route path="/contact-us" element={<Contactus />} />
           <Route
             path="/dashboard"
             element={
