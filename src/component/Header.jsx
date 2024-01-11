@@ -145,12 +145,10 @@ const Header = () => {
                     <NavDropdown.Item href="">
                       Our Legal Status
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="">
-                      How to Reach the Temple
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="">Board Members</NavDropdown.Item>
+{/*                     
+                    <NavDropdown.Item href="">Board Members</NavDropdown.Item> */}
                   </NavDropdown>
-                  <Nav.Link href="">Management Team</Nav.Link>
+                  <Nav.Link href="">Board Members</Nav.Link>
                   <Nav.Link href="">Contact Us</Nav.Link>
 
                   <div className="nav-right">

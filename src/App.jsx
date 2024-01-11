@@ -12,6 +12,10 @@ import Transactions from "./pages/Dashboard/Transactions";
 import { Membership } from "./pages/Dashboard/Membership";
 import { Donatenow } from "./pages/Donatenow";
 import UserPrivateRoute from "./PrivateRoute/PrivateRoutes";
+import { Aboutus } from "./pages/Aboutus";
+import { Agrawalfoundation } from "./pages/Agrawalfoundation";
+import { Legalstatus } from "./pages/Legalstatus";
+import { Boardmember } from "./pages/Boardmember";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +28,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/donate-now" element={<Donatenow />} />
+          <Route path="/about-us" element={<Aboutus />} />
+          <Route path="/agrawal-foundation" element={<Agrawalfoundation />} />
+          <Route path="/legal-status" element={<Legalstatus />} />
+          <Route path="/board-member" element={<Boardmember />} />
           <Route
             path="/dashboard"
             element={

@@ -129,7 +129,7 @@ export const Register = () => {
                 <h2>Sign Up</h2>
                 <ul>
                   <li>
-                    <a href="">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li className="active">Sign Up</li>
                 </ul>

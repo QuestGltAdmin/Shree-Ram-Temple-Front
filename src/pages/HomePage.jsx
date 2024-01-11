@@ -162,9 +162,80 @@ const HomePage = () => {
                   </div>
                 </div>
               </Col>
-              <Col md="12">
-                <div className="text-center mt-3">
-                  <a className="cmn-btn">View More </a>
+              <Col lg="3" md="6">
+                <div className="item">
+                  <img
+                    src="assets/image/brick1.png"
+                    className="img-fluid w-100"
+                    alt=""
+                  />
+                  <div className="info">
+                    <h4>Donate 300 Bricks</h4>
+                    <p className="para">
+                    Brick donated by you will be a part of the temple forever
+                    </p>
+                    <h4>₹ 2100</h4>
+                    <a className=" cmn-btn" href="">
+                      Donate Now
+                    </a>
+                  </div>
+                </div>
+              </Col>
+              <Col lg="3" md="6">
+                <div className="item">
+                  <img
+                    src="assets/image/brick2.png"
+                    className="img-fluid w-100"
+                    alt=""
+                  />
+                  <div className="info">
+                    <h4>Donate 150 Bricks</h4>
+                    <p className="para">
+                    Brick donated by you will be a part of the temple forever
+                    </p>
+                    <h4>₹ 1151</h4>
+                    <a className=" cmn-btn" href="">
+                      Donate Now
+                    </a>
+                  </div>
+                </div>
+              </Col>
+              <Col lg="3" md="6">
+                <div className="item">
+                  <img
+                    src="assets/image/brick3.png"
+                    className="img-fluid w-100"
+                    alt=""
+                  />
+                  <div className="info">
+                    <h4>Donate 100 Bricks</h4>
+                    <p className="para">
+                    Brick donated by you will be a part of the temple forever
+                    </p>
+                    <h4>₹ 751</h4>
+                    <a className=" cmn-btn" href="">
+                      Donate Now
+                    </a>
+                  </div>
+                </div>
+              </Col>
+              <Col lg="3" md="6">
+                <div className="item">
+                  <img
+                    src="assets/image/soil.png"
+                    className="img-fluid w-100"
+                    alt=""
+                  />
+                  <div className="info">
+                    <h4>Donate 20 CFT Sand</h4>
+                    <p className="para">
+                    Sand donated by you will be a part of the temple forever
+                    </p>
+                    <h4>₹ 1551</h4>
+                    <a className=" cmn-btn" href="">
+                      Donate Now
+                    </a>
+                  </div>
                 </div>
               </Col>
             </Row>
