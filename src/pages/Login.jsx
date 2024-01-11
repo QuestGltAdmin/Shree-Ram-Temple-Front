@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import PhoneInput from "react-phone-input-2";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../component/Layout";
@@ -31,6 +32,8 @@ export const Login = () => {
     phone: "",
     password: "",
   });
+  const [phoneNumber, setPhoneNumber] = useState();
+
   //===============End of code====================//
   //===============For PopUp Modal====================//
   const [openModel, setOpenModel] = useState(false);
@@ -41,6 +44,23 @@ export const Login = () => {
   //===============Funtion for take Input====================//
   const HandleData = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  };
+
+  const HandelPhoneNo = (phone, code) => {
+    if (
+      typeof phone === "string" &&
+      code &&
+      typeof code.dialCode === "string"
+    ) {
+      setInputValue({
+        ...inputValue,
+        countryCode: code.dialCode,
+        phone: phone.slice(code.dialCode.length),
+      });
+      setFormError("");
+    } else {
+      setFormError("Invalid phone number format or code");
+    }
   };
   //====================End of code===========================//
 
@@ -121,21 +141,18 @@ export const Login = () => {
                     <p>Please Provide Your Valid Credentials</p>
 
                     <div>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Phone Number</Form.Label>
-                        <InputGroup>
-                          <InputGroup.Text>
-                            <i className="fas fa-phone" />
-                          </InputGroup.Text>
-                          <Form.Control
-                            type="text"
-                            placeholder="Phone Number"
-                            name="phone"
-                            onChange={HandleData}
-                            value={inputValue.phone}
-                          />
-                        </InputGroup>
-                      </Form.Group>
+                    <Form.Group className="mb-3">
+                            <Form.Label>Phone Number</Form.Label>
+                            <PhoneInput
+                                 className="input-group"
+                                 country={"in"}
+                                  name="phoneNumber"
+                                  value={phoneNumber}
+                                  onChange={HandelPhoneNo}
+                                  placeholder="Phone Number"
+                                />
+                           
+                          </Form.Group>
                       <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
                         <InputGroup>
