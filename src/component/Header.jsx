@@ -133,23 +133,23 @@ const Header = () => {
                       }
                     }}
                   >
-                    <NavDropdown.Item href="">
+                    <NavDropdown.Item href="/about-us">
                       About the Temple
                     </NavDropdown.Item>
                     {/* <NavDropdown.Item href="">
                                             Another action
                                         </NavDropdown.Item> */}
-                    <NavDropdown.Item href="">
-                      About Suma Blessings Foundation
+                    <NavDropdown.Item href="/agrawal-foundation">
+                      About Agrawal Foundation
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="">
+                    <NavDropdown.Item href="/legal-status">
                       Our Legal Status
                     </NavDropdown.Item>
 {/*                     
                     <NavDropdown.Item href="">Board Members</NavDropdown.Item> */}
                   </NavDropdown>
-                  <Nav.Link href="">Board Members</Nav.Link>
-                  <Nav.Link href="">Contact Us</Nav.Link>
+                  <Nav.Link href="/board-member">Board Members</Nav.Link>
+                  {/* <Nav.Link href="">Contact Us</Nav.Link> */}
 
                   <div className="nav-right">
                     <a href="/donate-now" class="cmn-btn style--three">
