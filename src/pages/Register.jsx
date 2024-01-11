@@ -37,6 +37,11 @@ export const Register = () => {
   const [phoneNumber, setPhoneNumber] = useState();
 
   //===============End of code====================//
+  //===================================show eye============================//
+  const [eyeShow, setEyeShow] = useState(false);
+  const [eyeShow1, setEyeShow1] = useState(false);
+
+  //==================================end of code==========================//
   //===============For PopUp Modal====================//
   const [openModel, setOpenModel] = useState(false);
   const [modelMessage, setModelMessage] = useState("");
@@ -190,13 +195,25 @@ export const Register = () => {
                                 <i className="fas fa-lock" />
                               </InputGroup.Text>
                               <Form.Control
-                                type="password"
+                                type={`${eyeShow ? "text" : "password"}`}
                                 placeholder="Password"
                                 name="password"
                                 onChange={HandleData}
                                 value={inputValue.password}
                               />
+                               <InputGroup.Text
+                                onClick={() => {
+                                  setEyeShow(!eyeShow);
+                                }}
+                              >
+                                {eyeShow ? (
+                                  <i className="fa fa-eye"></i>
+                                ) : (
+                                  <i className="fa fa-eye-slash"></i>
+                                )}
+                              </InputGroup.Text>
                             </InputGroup>
+                           
                           </Form.Group>
                         </Col>
                         <Col lg={6}>
@@ -207,12 +224,23 @@ export const Register = () => {
                                 <i className="fas fa-lock" />
                               </InputGroup.Text>
                               <Form.Control
-                                type="password"
+                               type={`${eyeShow1 ? "text" : "password"}`}
                                 placeholder="Confirm Password"
                                 name="copassword"
                                 onChange={HandleData}
                                 value={inputValue.copassword}
                               />
+                              <InputGroup.Text
+                                onClick={() => {
+                                  setEyeShow1(!eyeShow1);
+                                }}
+                              >
+                                {eyeShow1 ? (
+                                  <i className="fa fa-eye"></i>
+                                ) : (
+                                  <i className="fa fa-eye-slash"></i>
+                                )}
+                              </InputGroup.Text>
                             </InputGroup>
                           </Form.Group>
                         </Col>

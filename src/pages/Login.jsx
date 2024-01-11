@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import PhoneInput from "react-phone-input-2";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../component/Layout";
@@ -30,7 +31,11 @@ export const Login = () => {
   const [inputValue, setInputValue] = useState({
     phone: "",
     password: "",
+    countryCode: "",
   });
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [eyeShow, setEyeShow] = useState(false);
+
   //===============End of code====================//
   //===============For PopUp Modal====================//
   const [openModel, setOpenModel] = useState(false);
@@ -41,6 +46,23 @@ export const Login = () => {
   //===============Funtion for take Input====================//
   const HandleData = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  };
+
+  const HandelPhoneNo = (phone, code) => {
+    if (
+      typeof phone === "string" &&
+      code &&
+      typeof code.dialCode === "string"
+    ) {
+      setInputValue({
+        ...inputValue,
+        countryCode: code.dialCode,
+        phone: phone.slice(code.dialCode.length),
+      });
+      setFormError("");
+    } else {
+      setFormError("Invalid phone number format or code");
+    }
   };
   //====================End of code===========================//
 
@@ -56,6 +78,7 @@ export const Login = () => {
       const payload = {
         mobile: inputValue.phone,
         password: inputValue.password,
+        countryCode: inputValue.countryCode,
       };
       try {
         console.log("here");
@@ -86,7 +109,7 @@ export const Login = () => {
           action_mo={openModel}
           random_val={randomVal}
         />
-        <section className="login-header-strip">
+        {/* <section className="login-header-strip">
           <Container>
             <Row>
               <Col>
@@ -100,7 +123,7 @@ export const Login = () => {
               </Col>
             </Row>
           </Container>
-        </section>
+        </section> */}
         <section className="form-login-sec">
           <Container>
             <div className="outer-box-login">
@@ -121,21 +144,18 @@ export const Login = () => {
                     <p>Please Provide Your Valid Credentials</p>
 
                     <div>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Phone Number</Form.Label>
-                        <InputGroup>
-                          <InputGroup.Text>
-                            <i className="fas fa-phone" />
-                          </InputGroup.Text>
-                          <Form.Control
-                            type="text"
-                            placeholder="Phone Number"
-                            name="phone"
-                            onChange={HandleData}
-                            value={inputValue.phone}
-                          />
-                        </InputGroup>
-                      </Form.Group>
+                    <Form.Group className="mb-3">
+                            <Form.Label>Phone Number</Form.Label>
+                            <PhoneInput
+                                 className="input-group"
+                                 country={"in"}
+                                  name="phoneNumber"
+                                  value={phoneNumber}
+                                  onChange={HandelPhoneNo}
+                                  placeholder="Phone Number"
+                                />
+                           
+                          </Form.Group>
                       <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
                         <InputGroup>
@@ -143,12 +163,23 @@ export const Login = () => {
                             <i className="fas fa-key" />
                           </InputGroup.Text>
                           <Form.Control
-                            type="password"
+                            type={`${eyeShow ? "text" : "password"}`}
                             placeholder="Password"
                             name="password"
                             onChange={HandleData}
                             value={inputValue.password}
                           />
+                          <InputGroup.Text
+                                onClick={() => {
+                                  setEyeShow(!eyeShow);
+                                }}
+                              >
+                                {eyeShow ? (
+                                  <i className="fa fa-eye"></i>
+                                ) : (
+                                  <i className="fa fa-eye-slash"></i>
+                                )}
+                              </InputGroup.Text>
                         </InputGroup>
                       </Form.Group>
                       <p>{formError}</p>
