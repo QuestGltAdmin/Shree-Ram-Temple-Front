@@ -166,6 +166,9 @@ export const Login = () => {
                             onChange={HandleData}
                             value={inputValue.password}
                           />
+                          <InputGroup.Text>
+                            <i className="fas fa-eye" />
+                          </InputGroup.Text>
                         </InputGroup>
                       </Form.Group>
                       <p>{formError}</p>

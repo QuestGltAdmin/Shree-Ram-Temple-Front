@@ -94,7 +94,7 @@ font-weight: 600;
 }
 .login-form-box-main .form-control,
 .login-form-box-main .form-select {
-    border: 2px solid #d4600b;
+    border: 2px solid #d4600b !important;
     padding: 10px 15px;
     box-shadow: none !important;
 }
@@ -113,14 +113,14 @@ font-weight: 600;
 .fa-phone{
     transform: rotate(90deg);
   }
-  .login-form-box-main .input-group-text{
-background-color: transparent;
-border: 2px solid #d4600b;
-color: #d4600b;
-border-right: 0;
-min-width: 50px;
-justify-content: center;
-  }
+  .login-form-box-main .input-group-text {
+    background-color: transparent;
+    border: 2px solid #d4600b !important;
+    color: #d4600b;
+    border-right: 0;
+    min-width: 50px;
+    justify-content: center;
+}
 
 @media (max-width: 992px) {
     .left-img-login{
