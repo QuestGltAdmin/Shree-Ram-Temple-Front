@@ -97,7 +97,9 @@ const HomePage = () => {
                       Donate 1 square foot of pink stone for construction
                     </p>
                     <h4>₹ 6500</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -115,7 +117,9 @@ const HomePage = () => {
                       forever
                     </p>
                     <h4>₹ 5100</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -133,7 +137,9 @@ const HomePage = () => {
                       forever
                     </p>
                     <h4>₹ 4400</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -151,7 +157,9 @@ const HomePage = () => {
                       forever
                     </p>
                     <h4>₹ 1600</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -165,10 +173,12 @@ const HomePage = () => {
                   <div className="info">
                     <h4>Donate 300 Bricks</h4>
                     <p className="para">
-                    Brick donated by you will be a part of the temple forever
+                      Brick donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 2100</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -182,10 +192,12 @@ const HomePage = () => {
                   <div className="info">
                     <h4>Donate 150 Bricks</h4>
                     <p className="para">
-                    Brick donated by you will be a part of the temple forever
+                      Brick donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 1151</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -199,10 +211,12 @@ const HomePage = () => {
                   <div className="info">
                     <h4>Donate 100 Bricks</h4>
                     <p className="para">
-                    Brick donated by you will be a part of the temple forever
+                      Brick donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 751</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -216,10 +230,12 @@ const HomePage = () => {
                   <div className="info">
                     <h4>Donate 20 CFT Sand</h4>
                     <p className="para">
-                    Sand donated by you will be a part of the temple forever
+                      Sand donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 1551</h4>
-                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
+                    <Link to={"/donate-now"} className="cmn-btn">
+                      Donate Now
+                    </Link>
                   </div>
                 </div>
               </Col>
