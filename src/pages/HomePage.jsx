@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../component/Layout";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -96,9 +97,7 @@ const HomePage = () => {
                       Donate 1 square foot of pink stone for construction
                     </p>
                     <h4>₹ 6500</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -116,9 +115,7 @@ const HomePage = () => {
                       forever
                     </p>
                     <h4>₹ 5100</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -136,9 +133,7 @@ const HomePage = () => {
                       forever
                     </p>
                     <h4>₹ 4400</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -156,9 +151,7 @@ const HomePage = () => {
                       forever
                     </p>
                     <h4>₹ 1600</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -175,9 +168,7 @@ const HomePage = () => {
                     Brick donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 2100</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -194,9 +185,7 @@ const HomePage = () => {
                     Brick donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 1151</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -213,9 +202,7 @@ const HomePage = () => {
                     Brick donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 751</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
@@ -232,9 +219,7 @@ const HomePage = () => {
                     Sand donated by you will be a part of the temple forever
                     </p>
                     <h4>₹ 1551</h4>
-                    <a className=" cmn-btn" href="">
-                      Donate Now
-                    </a>
+                    <Link to={"/donate-now"} className="cmn-btn">Donate Now</Link>
                   </div>
                 </div>
               </Col>
