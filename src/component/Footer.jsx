@@ -32,7 +32,11 @@ const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <a>
+                      <a 
+                       onClick={() => {
+                        window.open("https://www.facebook.com/profile.php?id=61554845327049&mibextid=ZbWKwL", "_blank");
+                      }}
+                      >
                         <i className="fab fa-facebook-f"></i>
                       </a>
                     </li>
