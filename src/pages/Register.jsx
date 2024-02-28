@@ -73,14 +73,17 @@ export const Register = () => {
 
   //========================= Handle login function =========================//
   const HandleReister = async () => {
+    let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
     if (!inputValue.name) {
       setFormError("Please enter valid user name");
-    } else if (!inputValue.password) {
-      setFormError("Please enter your password!");
+    } else if (!inputValue.password || inputValue.password.length < 6) {
+      setFormError("password must be greater than 6 words");
     } else if (!inputValue.phone) {
       setFormError("Please enter your Phone!");
     } else if (inputValue.password !== inputValue.copassword) {
       setFormError("password does not match");
+    } else if (!regex.test(inputValue.email)) {
+      setFormError("Please enter valid email");
     } else {
       setDisable(true);
       setFormError("");
@@ -246,7 +249,7 @@ export const Register = () => {
                       <Row>
                         <Col lg={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label>Email address (Optional)</Form.Label>
+                            <Form.Label>Email address</Form.Label>
                             <InputGroup>
                               <InputGroup.Text>
                                 <i className="fas fa-envelope" />

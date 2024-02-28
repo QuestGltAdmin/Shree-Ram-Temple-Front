@@ -20,6 +20,7 @@ import { Contactus } from "./pages/Contactus";
 import { Forgotpass } from "./pages/Forgotpass";
 import { Resetpass } from "./pages/Resetpass";
 import { Otp } from "./pages/Otp";
+import { SignUpOtp } from "./pages/SignUpOtp";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,9 +33,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/sign-up-otp" element={<SignUpOtp />} />
           <Route path="/forgotpass" element={<Forgotpass />} />
           <Route path="/resetpass" element={<Resetpass />} />
-          <Route path="/otp" element={<Otp />} />
+          <Route path="/forgot-otp" element={<Otp />} />
           <Route path="/donate-now" element={<Donatenow />} />
           <Route path="/about-us" element={<Aboutus />} />
           <Route path="/agrawal-foundation" element={<Agrawalfoundation />} />

@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const axiosMain = axios.create({
-  baseURL: "https://blockspace.donative.in:3009/",
+  baseURL: "https://jayagrasen.com:3000/",
+
   headers: {
     "Content-Type": "application/json",
   },

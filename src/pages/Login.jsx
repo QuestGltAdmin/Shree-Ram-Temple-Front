@@ -4,7 +4,7 @@ import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from "../component/Layout";
 import { Notification } from "../Notifications/Notification";
 import { userLoginSaga } from "../store/reducers/authReducer";
@@ -29,9 +29,8 @@ export const Login = () => {
   const [formError, setFormError] = useState("");
   const [disable, setDisable] = useState(false);
   const [inputValue, setInputValue] = useState({
-    phone: "",
+    email: "",
     password: "",
-    countryCode: "",
   });
   const [phoneNumber, setPhoneNumber] = useState();
   const [eyeShow, setEyeShow] = useState(false);
@@ -68,17 +67,16 @@ export const Login = () => {
 
   //========================= Handle login function =========================//
   const HandleLogin = async () => {
-    if (!inputValue.phone) {
-      setFormError("Please enter valid phone or user name");
+    if (!inputValue.email) {
+      setFormError("Please enter valid email");
     } else if (!inputValue.password) {
       setFormError("Please enter your password!");
     } else {
       setDisable(true);
       setFormError("");
       const payload = {
-        mobile: inputValue.phone,
+        email: inputValue.email,
         password: inputValue.password,
-        countryCode: inputValue.countryCode,
       };
       try {
         console.log("here");
@@ -145,15 +143,19 @@ export const Login = () => {
 
                     <div>
                       <Form.Group className="mb-3">
-                        <Form.Label>Phone Number</Form.Label>
-                        <PhoneInput
-                          className="input-group"
-                          country={"in"}
-                          name="phoneNumber"
-                          value={phoneNumber}
-                          onChange={HandelPhoneNo}
-                          placeholder="Phone Number"
+                        <Form.Label>Email</Form.Label>
+                        <InputGroup>
+                        <InputGroup.Text>
+                            <i className="fas fa-envelope" />
+                          </InputGroup.Text>
+                        <Form.Control
+                          type="email"
+                          placeholder="Enter email"
+                          name="email"
+                          onChange={HandleData}
+                          value={inputValue.email}
                         />
+                        </InputGroup>
                       </Form.Group>
                       <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
@@ -184,7 +186,7 @@ export const Login = () => {
                       <p>{formError}</p>
 
                       <p className="pass-line">
-                        <a href="">Forgot Password?</a>
+                        <Link to="/forgotpass">Forgot Password?</Link>
                       </p>
                       <button
                         className="cmn-btn"

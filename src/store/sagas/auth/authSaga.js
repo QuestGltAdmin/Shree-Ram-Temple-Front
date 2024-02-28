@@ -95,11 +95,11 @@ export function* registerSaga(action) {
       //   "signupData",
       //   JSON.stringify(response.data.data)
       // );
-      setModelMessage("SignUp success");
+      setModelMessage("Signup success. Please verify your otp!");
       setOpenModel(true);
       setRandomVal(Math.floor(Math.random() * 100 + 1));
       setTimeout(() => {
-        navigate("/login");
+        navigate("/sign-up-otp", { state: { email: payload.email } });
       }, 3000);
       yield put(registerSuccess(response.data.data));
     } else {
