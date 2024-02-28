@@ -17,6 +17,9 @@ import { Agrawalfoundation } from "./pages/Agrawalfoundation";
 import { Legalstatus } from "./pages/Legalstatus";
 import { Boardmember } from "./pages/Boardmember";
 import { Contactus } from "./pages/Contactus";
+import { Forgotpass } from "./pages/Forgotpass";
+import { Resetpass } from "./pages/Resetpass";
+import { Otp } from "./pages/Otp";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +32,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgotpass" element={<Forgotpass />} />
+          <Route path="/resetpass" element={<Resetpass />} />
+          <Route path="/otp" element={<Otp />} />
           <Route path="/donate-now" element={<Donatenow />} />
           <Route path="/about-us" element={<Aboutus />} />
           <Route path="/agrawal-foundation" element={<Agrawalfoundation />} />
