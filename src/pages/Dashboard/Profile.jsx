@@ -82,6 +82,11 @@ const Profile = () => {
         setLoding(false);
 
         setFormError(res.data.message);
+        setInputValue({
+          oldPassword : "",
+          new_password : "",
+          CoNewpassword : ""
+        })
       } else {
         setLoding(false);
 

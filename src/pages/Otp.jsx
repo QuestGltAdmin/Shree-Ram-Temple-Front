@@ -71,7 +71,6 @@ export const Otp = () => {
 
   //===============End of code====================//
   const HandleReSend = async () => {
-
     const payload = {
       email: email,
       type: "forgot",

@@ -145,16 +145,16 @@ export const Login = () => {
                       <Form.Group className="mb-3">
                         <Form.Label>Email</Form.Label>
                         <InputGroup>
-                        <InputGroup.Text>
+                          <InputGroup.Text>
                             <i className="fas fa-envelope" />
                           </InputGroup.Text>
-                        <Form.Control
-                          type="email"
-                          placeholder="Enter email"
-                          name="email"
-                          onChange={HandleData}
-                          value={inputValue.email}
-                        />
+                          <Form.Control
+                            type="email"
+                            placeholder="Enter email"
+                            name="email"
+                            onChange={HandleData}
+                            value={inputValue.email}
+                          />
                         </InputGroup>
                       </Form.Group>
                       <Form.Group className="mb-3">
