@@ -75,15 +75,15 @@ const Transactions = () => {
                                 </tr>
                               </thead>
                               {referralList === null ||
-                                referralList === undefined ||
-                                referralList === "" ||
-                                referralList.length === 0 ? (
-                                  <tr>
-                                    <td >No Records Found!</td>
-                                  </tr>
-                                ) : (
-                                  ""
-                                )}
+                              referralList === undefined ||
+                              referralList === "" ||
+                              referralList.length === 0 ? (
+                                <tr>
+                                  <td>No Records Found!</td>
+                                </tr>
+                              ) : (
+                                ""
+                              )}
                               {referralList?.map((item, index) => {
                                 return (
                                   <tbody>

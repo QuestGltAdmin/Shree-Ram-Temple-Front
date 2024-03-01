@@ -83,10 +83,10 @@ const Profile = () => {
 
         setFormError(res.data.message);
         setInputValue({
-          oldPassword : "",
-          new_password : "",
-          CoNewpassword : ""
-        })
+          oldPassword: "",
+          new_password: "",
+          CoNewpassword: "",
+        });
       } else {
         setLoding(false);
 
