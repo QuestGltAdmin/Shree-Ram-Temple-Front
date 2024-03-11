@@ -21,6 +21,7 @@ import { Forgotpass } from "./pages/Forgotpass";
 import { Resetpass } from "./pages/Resetpass";
 import { Otp } from "./pages/Otp";
 import { SignUpOtp } from "./pages/SignUpOtp";
+import { DonationForm } from "./pages/DonationForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -43,6 +44,7 @@ function App() {
           <Route path="/legal-status" element={<Legalstatus />} />
           <Route path="/board-member" element={<Boardmember />} />
           <Route path="/contact-us" element={<Contactus />} />
+          <Route path="/donation-form" element={<DonationForm />} />
           <Route
             path="/dashboard"
             element={
