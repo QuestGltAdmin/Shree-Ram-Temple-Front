@@ -1,0 +1,28 @@
+.login-form-box-main .react-tel-input.input-group .flag-dropdown .selected-flag{
+    min-width: auto;
+}
+.nationality-sec{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.nationality-sec label{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+}
+.nationality-sec input[type="radio" i] {
+    height: 16px;
+    width: 16px;
+    accent-color: #d4600b;
+    margin-right: 2px;
+}
+@media (max-width:768px){
+    .nationality-sec label{
+        font-size: 14px;
+    }
+    .login-form-box-main  .react-tel-input.input-group .form-control{
+        min-height: auto;
+    }
+}

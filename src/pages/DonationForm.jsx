@@ -75,49 +75,49 @@ export const DonationForm = () => {
   //====================End of code===========================//
 
   //========================= Handle login function =========================//
-//   const HandleReister = async () => {
-//     let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-//     if (!inputValue.name) {
-//       setFormError("Please enter valid user name");
-//     } else if (!inputValue.password || inputValue.password.length < 6) {
-//       setFormError("password must be greater than 6 words");
-//     } else if (!inputValue.phone) {
-//       setFormError("Please enter your Phone!");
-//     } else if (inputValue.password !== inputValue.copassword) {
-//       setFormError("password does not match");
-//     } else if (!regex.test(inputValue.email)) {
-//       setFormError("Please enter valid email");
-//     } else {
-//       setDisable(true);
-//       setFormError("");
-//       const payload = {
-//         fullName: inputValue.name,
-//         mobile: inputValue.phone,
-//         countryCode: inputValue.countryCode,
-//         email: inputValue.email,
-//         password: inputValue.password,
-//         referral_from: inputValue.referral,
-//       };
-//       try {
-//         const Donation = await axiosMain.post(
-//             "",
-//             payload,
-//             {
-//               headers: {
-//                 "Content-Type": "application/json",
-//                 authorization: `bearer ${user.token}`,
-//               },
-//             }
-//           );
-//       } catch (err) {
-//         console.log(err);
-//         setDisable(false);
-//         setModelMessage(err.response.data.message);
-//         setOpenModel(true);
-//         setRandomVal(Math.floor(Math.random() * 100 + 1));
-//       }
-//     }
-//   };
+  //   const HandleReister = async () => {
+  //     let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+  //     if (!inputValue.name) {
+  //       setFormError("Please enter valid user name");
+  //     } else if (!inputValue.password || inputValue.password.length < 6) {
+  //       setFormError("password must be greater than 6 words");
+  //     } else if (!inputValue.phone) {
+  //       setFormError("Please enter your Phone!");
+  //     } else if (inputValue.password !== inputValue.copassword) {
+  //       setFormError("password does not match");
+  //     } else if (!regex.test(inputValue.email)) {
+  //       setFormError("Please enter valid email");
+  //     } else {
+  //       setDisable(true);
+  //       setFormError("");
+  //       const payload = {
+  //         fullName: inputValue.name,
+  //         mobile: inputValue.phone,
+  //         countryCode: inputValue.countryCode,
+  //         email: inputValue.email,
+  //         password: inputValue.password,
+  //         referral_from: inputValue.referral,
+  //       };
+  //       try {
+  //         const Donation = await axiosMain.post(
+  //             "",
+  //             payload,
+  //             {
+  //               headers: {
+  //                 "Content-Type": "application/json",
+  //                 authorization: `bearer ${user.token}`,
+  //               },
+  //             }
+  //           );
+  //       } catch (err) {
+  //         console.log(err);
+  //         setDisable(false);
+  //         setModelMessage(err.response.data.message);
+  //         setOpenModel(true);
+  //         setRandomVal(Math.floor(Math.random() * 100 + 1));
+  //       }
+  //     }
+  //   };
   //========================= end of code =========================//
 
   return (
@@ -149,20 +149,42 @@ export const DonationForm = () => {
               <Row>
                 <Col lg={12}>
                   <div className="login-form-box-main">
-                  <h3 className=" text-center">
-                    Shri Agrasen tirthdham Online Donation
-                  </h3>
+                    <h3 className=" text-center">
+                      Shri Agrasen tirthdham Online Donation
+                    </h3>
 
-                  <h6 className="text-center">
-                    We request you to contribute generously and invoke the
-                    divine blessings of Lord Shree Agrasen Maharaj on your
-                    family.
-                    <br /> Join hands with us in the Bhavya Agrasen tirthdham
-                    Nirman Seva!
-                  </h6>
+                    <h6 className="text-center">
+                      We request you to contribute generously and invoke the
+                      divine blessings of Lord Shree Agrasen Maharaj on your
+                      family.
+                      <br /> Join hands with us in the Bhavya Agrasen tirthdham
+                      Nirman Seva!
+                    </h6>
 
                     <div>
                       <Row>
+                        <Col lg={12}>
+                          <br></br>
+                          <Form.Group className="mb-3">
+                            <Form.Label>Nationality</Form.Label>
+                            <div>
+                              <form action="/action_page.php" className="nationality-sec">
+                                <div className="d-flex align-items-center">
+                                  <input type="radio" id="html" name="fav_language" value="HTML" />
+                                  <label for="html">Indian</label>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <input type="radio" id="css" name="fav_language" value="CSS" />
+                                  <label for="css">NRI</label>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <input type="radio" id="javascript" name="fav_language" value="JavaScript" />
+                                  <label for="javascript">Foreign National</label>
+                                </div>
+                              </form>
+                            </div>
+                          </Form.Group>
+                        </Col>
                         <Col lg={6}>
                           <Form.Group className="mb-3">
                             <Form.Label>Full Name</Form.Label>
@@ -276,9 +298,9 @@ export const DonationForm = () => {
                             <Form.Control
                               type="text"
                               placeholder="amount"
-                              // name="referral"
-                              // onChange={HandleData}
-                              // value={inputValue.referral}
+                            // name="referral"
+                            // onChange={HandleData}
+                            // value={inputValue.referral}
                             />
                           </Form.Group>
                         </Col>
@@ -294,15 +316,15 @@ export const DonationForm = () => {
                               <Form.Control
                                 type="text"
                                 placeholder="Address"
-                                // name="name"
-                                // onChange={HandleData}
-                                // value={inputValue.name}
+                              // name="name"
+                              // onChange={HandleData}
+                              // value={inputValue.name}
                               />
                             </InputGroup>
                           </Form.Group>
                         </Col>
-                       </Row>
-                       <Row>
+                      </Row>
+                      <Row>
                         <Col lg={6}>
                           <Form.Group className="mb-3">
                             <Form.Label>State</Form.Label>
@@ -313,9 +335,9 @@ export const DonationForm = () => {
                               <Form.Control
                                 type="text"
                                 placeholder="State"
-                                // name="name"
-                                // onChange={HandleData}
-                                // value={inputValue.name}
+                              // name="name"
+                              // onChange={HandleData}
+                              // value={inputValue.name}
                               />
                             </InputGroup>
                           </Form.Group>
@@ -330,14 +352,14 @@ export const DonationForm = () => {
                               <Form.Control
                                 type="text"
                                 placeholder="Country"
-                                // name="name"
-                                // onChange={HandleData}
-                                // value={inputValue.name}
+                              // name="name"
+                              // onChange={HandleData}
+                              // value={inputValue.name}
                               />
                             </InputGroup>
                           </Form.Group>
                         </Col>
-                       </Row>
+                      </Row>
                       <p>{formError}</p>
                       <Row>
                         <Col lg={12}>
@@ -355,9 +377,9 @@ export const DonationForm = () => {
                       <button
                         className="cmn-btn"
                         disabled={isLoading ? "disabled" : ""}
-                        // onClick={() => {
-                        //   HandleReister();
-                        // }}
+                      // onClick={() => {
+                      //   HandleReister();
+                      // }}
                       >
                         {isLoading ? "Please Wait..." : " Submit"}
                       </button>
