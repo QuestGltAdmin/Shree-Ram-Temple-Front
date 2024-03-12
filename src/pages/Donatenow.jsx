@@ -175,12 +175,16 @@ export const Donatenow = () => {
                           ) : (
                             ""
                           )}
-                          <button className="cmn-btn" 
-                           onClick={() => {
-                  navigate("/admin-all-order-list", {
-                    state: { pageNumber: pageData },
-                  });
-                }}>Donate Now</button>
+                          <button
+                            className="cmn-btn"
+                            onClick={() => {
+                              navigate("/new-donation-form", {
+                                state: { amount: amountvalue },
+                              });
+                            }}
+                          >
+                            Donate Now
+                          </button>
                         </div>
                       </div>
                     </Col>
