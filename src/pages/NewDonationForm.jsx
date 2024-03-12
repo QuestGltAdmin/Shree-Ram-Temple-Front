@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from '../component/Layout'
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import PhoneInput from 'react-phone-input-2';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const NewDonationForm = () => {
+    const [startDate, setStartDate] = useState(new Date());
     return (
         <>
             <Layout>
                 <section className="form-login-sec">
                     <Container>
-                    <p className='devotee-head' >Dear Devotees, Shri Ram Temple Kamarpal is being built in Balasore, Odisha by Suma Blessings Foundation. We do not have any relation or connection whatsoever with the Ram Mandir in Ayodhya or any other mandir in India or abroad. </p>
+                        <p className='devotee-head' >Dear Devotees, Shri Ram Temple Kamarpal is being built in Balasore, Odisha by Suma Blessings Foundation. We do not have any relation or connection whatsoever with the Ram Mandir in Ayodhya or any other mandir in India or abroad. </p>
                         <div className="outer-box-login for-register-outer new-donation-form">
                             <Row>
                                 <Col lg={12}>
@@ -38,19 +40,19 @@ const NewDonationForm = () => {
                                                         <div>
                                                             <form action="/" className="nationality-sec">
                                                                 <Row>
-                                                                    <Col md="4">
+                                                                    <Col md="4" sm="6">
                                                                         <div className=" align-items-center inner-back">
                                                                             <input type="radio" id="html" name="fav_language" value="HTML" />
                                                                             <label for="html">Indian</label>
                                                                         </div>
                                                                     </Col>
-                                                                    <Col md="4">
+                                                                    <Col md="4" sm="6">
                                                                         <div className=" align-items-center inner-back">
                                                                             <input type="radio" id="css" name="fav_language" value="CSS" />
                                                                             <label for="css">NRI</label>
                                                                         </div>
                                                                     </Col>
-                                                                    <Col md="4">
+                                                                    <Col md="4" sm="6">
                                                                         <div className=" align-items-center inner-back">
                                                                             <input type="radio" id="javascript" name="fav_language" value="JavaScript" />
                                                                             <label for="javascript">Foreign National</label>
@@ -66,15 +68,27 @@ const NewDonationForm = () => {
                                                 <h4 className=" text-start mb-3 font-w600">
                                                     2. Donor's Information
                                                 </h4>
-                                                <Col lg={6}>
+                                                <Col lg={2}>
 
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Full Name*</Form.Label>                                                        
-                                                            <Form.Control
-                                                                type="text"
-                                                                placeholder="Full Name"
-                                                                name="name"
-                                                            />
+                                                        <Form.Label>Title</Form.Label>
+                                                        <select className="form-control" name="title">
+                                                            <option value="Mr">Mr</option>
+                                                            <option value="Miss">Miss</option>
+                                                            <option value="Mrs">Mrs</option>
+                                                            <option value="Ms">Ms</option>
+                                                        </select>
+                                                    </Form.Group>
+                                                </Col>
+                                                <Col lg={5}>
+
+                                                    <Form.Group className="mb-3">
+                                                        <Form.Label>Full Name*</Form.Label>
+                                                        <Form.Control
+                                                            type="text"
+                                                            placeholder="Full Name"
+                                                            name="name"
+                                                        />
                                                     </Form.Group>
                                                 </Col>
 
@@ -92,7 +106,7 @@ const NewDonationForm = () => {
                                                 </Col>
                                                 <Col lg={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Phone Number*</Form.Label>
+                                                        <Form.Label>Phone No*</Form.Label>
                                                         <PhoneInput
                                                             className="input-group"
                                                             country={"in"}
@@ -114,10 +128,7 @@ const NewDonationForm = () => {
                                                 <Col lg={6}>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label>Date of Birth</Form.Label>
-                                                        <Form.Control
-                                                            name=""
-                                                            placeholder="dd-mm-yy"
-                                                        />
+                                                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col lg={6}>
@@ -456,7 +467,7 @@ const NewDonationForm = () => {
                                                 </Col>
                                                 <Col lg="6">
                                                     <h4 className=" text-start font-w600">
-                                                    3. Source of Information
+                                                        3. Source of Information
                                                     </h4>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label>How did you get to know about us? *</Form.Label>
@@ -473,7 +484,7 @@ const NewDonationForm = () => {
                                                 </Col>
                                                 <Col lg="6">
                                                     <h4 className=" text-start font-w600">
-                                                    4. Name to be inscribed on the wall
+                                                        4. Name to be inscribed on the wall
                                                     </h4>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label>For Shabri Seva Donor's*</Form.Label>
@@ -482,12 +493,12 @@ const NewDonationForm = () => {
                                                             name=""
                                                             placeholder=""
                                                         />
-                                                        </Form.Group>
-                                                        </Col>
+                                                    </Form.Group>
+                                                </Col>
                                             </Row>
                                             <div className='text-center'>
-                                            <button href="/donate-now" className="cmn-btn style--three w-auto">Proceed to donate </button>
-                                            <p className='mt-2'>You can avail 80G tax benefit with this donation.</p>
+                                                <button href="/donate-now" className="cmn-btn style--three w-auto">Proceed to donate </button>
+                                                <p className='mt-2'>You can avail 80G tax benefit with this donation.</p>
                                             </div>
                                         </div>
                                     </div>
