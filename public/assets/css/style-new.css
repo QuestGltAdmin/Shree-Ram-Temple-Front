@@ -2,21 +2,47 @@
     min-width: auto;
 }
 .nationality-sec{
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
+}
+.nationality-sec .inner-back{
+    background: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.devotee-head{
+    color: red;
+    font-weight: 600;
+}
+.color-grey{
+    color: #6f6f6f;
+}
+.font-w600{
+    font-weight: 600;
 }
 .nationality-sec label{
     font-size: 16px;
+    color: #6f6f6f;
     font-weight: 500;
     line-height: 16px;
 }
 .nationality-sec input[type="radio" i] {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     accent-color: #d4600b;
-    margin-right: 2px;
+    margin-right: 4px;
+}
+.new-donation-form{
+    max-width: none !important;
+}
+.new-donation-form .login-form-box-main .form-control,.new-donation-form .login-form-box-main .form-select,.new-donation-form .react-tel-input.input-group .flag-dropdown{
+    border: 1px solid #aaaaaa !important;
+    background-color: #f9f9f9;
 }
 @media (max-width:768px){
     .nationality-sec label{
