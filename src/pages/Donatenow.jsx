@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import Layout from "../component/Layout";
+import { useNavigate } from "react-router-dom";
 
 export const Donatenow = () => {
+  const navigate = useNavigate();
+
+  //===========================Local Variable=================================//
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [amountvalue, setAmountValue] = useState(501);
+  const [activetileIndex, setActiveTileIndex] = useState(0);
+  const [amounttilevalue, setAmountTileValue] = useState(6000);
+  const [activesquareIndex, setActiveSquareIndex] = useState(0);
+  const [amountsquarevalue, setAmountSquareValue] = useState(6000);
+  const [otheramount, setOtherAmount] = useState(false);
+
+  //===========================End Of Code=================================//
+  console.log(amountvalue, "amount");
+  console.log(amounttilevalue, "tile");
+  console.log(amountsquarevalue, "square");
+
+  const handleAmountChange = (event) => {
+    setAmountValue(event.target.value);
+  };
   return (
     <>
       <Layout>
@@ -34,42 +54,133 @@ export const Donatenow = () => {
                         </h5>
                         <ul>
                           <li>
-                            <button className="active">₹501</button>
+                            <button
+                              className={activeIndex === 0 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(0);
+                                setAmountValue(501);
+                              }}
+                            >
+                              ₹501
+                            </button>
                           </li>
                           <li>
-                            <button>₹1100</button>
+                            <button
+                              className={activeIndex === 1 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(1);
+                                setAmountValue(1100);
+                              }}
+                            >
+                              ₹1100
+                            </button>
                           </li>
                           <li>
-                            <button>₹2100</button>
+                            <button
+                              className={activeIndex === 2 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(2);
+                                setAmountValue(2100);
+                              }}
+                            >
+                              ₹2100
+                            </button>
                           </li>
                           <li>
-                            <button>₹5100</button>
+                            <button
+                              className={activeIndex === 3 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(3);
+                                setAmountValue(5100);
+                              }}
+                            >
+                              ₹5100
+                            </button>
                           </li>
                           <li>
-                            <button>₹11000</button>
+                            <button
+                              className={activeIndex === 4 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(4);
+                                setAmountValue(11000);
+                              }}
+                            >
+                              ₹11000
+                            </button>
                           </li>
                           <li>
-                            <button>₹31000</button>
+                            <button
+                              className={activeIndex === 5 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(5);
+                                setAmountValue(31000);
+                              }}
+                            >
+                              ₹31000
+                            </button>
                           </li>
                           <li>
-                            <button>₹51000</button>
+                            <button
+                              className={activeIndex === 6 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(6);
+                                setAmountValue(51000);
+                              }}
+                            >
+                              ₹51000
+                            </button>
                           </li>
                           <li>
-                            <button>₹71000</button>
+                            <button
+                              className={activeIndex === 7 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(7);
+                                setAmountValue(71000);
+                              }}
+                            >
+                              ₹71000
+                            </button>
                           </li>
                           <li>
-                            <button>₹111000</button>
+                            <button
+                              className={activeIndex === 8 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(8);
+                                setAmountValue(111000);
+                              }}
+                            >
+                              ₹111000
+                            </button>
                           </li>
                           <li>
-                            <button>other Amount</button>
+                            <button
+                              className={activeIndex === 9 ? "active" : ""}
+                              onClick={() => {
+                                setActiveIndex(9);
+                                setAmountValue(0);
+                                setOtherAmount(true);
+                              }}
+                            >
+                              other Amount
+                            </button>
                           </li>
                         </ul>
                         <div>
-                          <Form.Control
-                            type="text"
-                            placeholder="Enter Amount"
-                          />
-                          <button className="cmn-btn">Donate Now</button>
+                          {otheramount ? (
+                            <Form.Control
+                              type="text"
+                              placeholder="Enter Amount"
+                              onChange={handleAmountChange}
+                            />
+                          ) : (
+                            ""
+                          )}
+                          <button className="cmn-btn" 
+                           onClick={() => {
+                  navigate("/admin-all-order-list", {
+                    state: { pageNumber: pageData },
+                  });
+                }}>Donate Now</button>
                         </div>
                       </div>
                     </Col>
@@ -83,42 +194,90 @@ export const Donatenow = () => {
                         </h5>
                         <ul>
                           <li>
-                            <button className="active">
+                            <button
+                              className={activetileIndex === 0 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(0);
+                                setAmountTileValue(6000);
+                              }}
+                            >
                               ₹6000 <span>For 1 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 1 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(1);
+                                setAmountTileValue(12000);
+                              }}
+                            >
                               ₹12000 <span>For 2 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 2 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(2);
+                                setAmountTileValue(18000);
+                              }}
+                            >
                               ₹18000 <span>For 3 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 3 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(3);
+                                setAmountTileValue(24000);
+                              }}
+                            >
                               ₹24000 <span>For 4 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 4 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(4);
+                                setAmountTileValue(30000);
+                              }}
+                            >
                               ₹30000 <span>For 5 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 5 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(5);
+                                setAmountTileValue(36000);
+                              }}
+                            >
                               ₹36000 <span>For 6 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 6 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(6);
+                                setAmountTileValue(72000);
+                              }}
+                            >
                               ₹72000 <span>For 12 Tile</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={activetileIndex === 7 ? "active" : ""}
+                              onClick={() => {
+                                setActiveTileIndex(7);
+                                setAmountTileValue(120000);
+                              }}
+                            >
                               ₹120000 <span>For 20 Tile</span>
                             </button>
                           </li>
@@ -147,52 +306,133 @@ export const Donatenow = () => {
                         </h5>
                         <ul>
                           <li>
-                            <button className="active">
+                            <button
+                              className={
+                                activesquareIndex === 0 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(0);
+                                setAmountSquareValue(6000);
+                              }}
+                            >
                               ₹6,000/- <span>For 1 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 1 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(1);
+                                setAmountSquareValue(12000);
+                              }}
+                            >
                               ₹12,000/- <span>For 2 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 2 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(2);
+                                setAmountSquareValue(18000);
+                              }}
+                            >
                               ₹18,000/- <span>For 3 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 3 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(3);
+                                setAmountSquareValue(30000);
+                              }}
+                            >
                               ₹30,000/- <span>For 5 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 4 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(4);
+                                setAmountSquareValue(60000);
+                              }}
+                            >
                               ₹60,000/- <span>For 10 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            {" "}
+                            <button
+                              className={
+                                activesquareIndex === 5 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(5);
+                                setAmountSquareValue(120000);
+                              }}
+                            >
                               ₹1,20,000/- <span>For 20 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 6 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(6);
+                                setAmountSquareValue(300000);
+                              }}
+                            >
                               ₹3,00,000/- <span>For 50 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 7 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(7);
+                                setAmountSquareValue(600000);
+                              }}
+                            >
                               ₹6,00,000/- <span>For 100 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 8 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(8);
+                                setAmountSquareValue(3000000);
+                              }}
+                            >
                               ₹30,00,000/- <span>For 500 Sq. Feet</span>
                             </button>
                           </li>
                           <li>
-                            <button>
+                            <button
+                              className={
+                                activesquareIndex === 9 ? "active" : ""
+                              }
+                              onClick={() => {
+                                setActiveSquareIndex(9);
+                                setAmountSquareValue(6000000);
+                              }}
+                            >
                               ₹60,00,000/- <span>For 1000 Sq. Feet</span>
                             </button>
                           </li>
