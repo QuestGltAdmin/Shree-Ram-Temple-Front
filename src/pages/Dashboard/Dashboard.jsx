@@ -15,7 +15,6 @@ const Dashboard = () => {
   const [totaldonater, setTotalDonater] = useState("");
   //====================End of code====================//
 
-  console.log(user, "user");
   useEffect(() => {
     DasboardData();
   }, []);

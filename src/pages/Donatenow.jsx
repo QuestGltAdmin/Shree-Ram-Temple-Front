@@ -17,9 +17,6 @@ export const Donatenow = () => {
   const [otheramount, setOtherAmount] = useState(false);
 
   //===========================End Of Code=================================//
-  console.log(amountvalue, "amount");
-  console.log(amounttilevalue, "tile");
-  console.log(amountsquarevalue, "square");
 
   const handleAmountChange = (event) => {
     setAmountValue(event.target.value);
