@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Layout from "../component/Layout";
-import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useLocation, useNavigate } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import useAuth from "../hooks/useAuth";
 import axiosMain from "../http/axios/axios_main";
+import { Notification } from "../Notifications/Notification";
 
 const NewDonationForm = () => {
   //=============== Globle vaiable ====================//
@@ -15,11 +16,10 @@ const NewDonationForm = () => {
   const dispatch = useDispatch();
   const { state } = useLocation("/donate-now");
   const { amount } = state || "";
-  // console.log(amount,"amount")
   //===============End of code====================//
+
   //======================Auth States=====================//
   const { user } = useAuth();
-  //   console.log(user, "user");
   //====================End of code====================//
 
   //=============== Local vaiable ====================//
@@ -27,13 +27,10 @@ const NewDonationForm = () => {
   const [formError, setFormError] = useState("");
   const [disable, setDisable] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState();
-  const [razorpayid, setRazorPayID] = useState();
-  console.log(razorpayid, "razorpayid");
   const [inputValue, setInputValue] = useState({
     title: "",
     name: "",
     email: "",
-    // countryCode: "",
     phone: "",
     pancard: "",
     date_of_birth: "",
@@ -48,6 +45,7 @@ const NewDonationForm = () => {
   });
 
   //===============End of code====================//
+  const [paymentLoading, setPaymentLoading] = useState(false);
 
   //===============For PopUp Modal====================//
   const [openModel, setOpenModel] = useState(false);
@@ -59,7 +57,6 @@ const NewDonationForm = () => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
 
-  //   console.log(inputValue, "input");
   //========================= Handle donation function =========================//
   const HandleDonation = async () => {
     let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
@@ -79,7 +76,6 @@ const NewDonationForm = () => {
         title: inputValue?.title,
         fullName: inputValue?.name,
         mobile: phoneNumber,
-        // countryCode: inputValue?.countryCode,
         email: inputValue?.email,
         panCard: inputValue?.pancard,
         address1: inputValue?.address1,
@@ -104,12 +100,33 @@ const NewDonationForm = () => {
           }
         );
         if (Donation?.data?.data?.status) {
-          console.log(Donation, "ddddddd");
-          console.log(Donation?.data?.data?.id, "iiidddd");
-          setRazorPayID(Donation?.data?.data?.id);
-          const pay = new window.Razorpay(options);
-          setDisable(true);
-          pay.open();
+          const options = {
+            key: "rzp_test_stZ12Y8PtmgNZi",
+            amount: amount, // amount in paise
+            currency: "INR",
+            name: "Agrasen tirthdham Nirman Seva",
+            description: "Agrasen tirthdham Nirman Seva",
+            order_id: Donation?.data?.data?.id,
+            handler: function (response) {
+              // Handle the payment success
+              const {
+                razorpay_order_id,
+                razorpay_payment_id,
+                razorpay_signature,
+              } = response;
+
+              VerifyPayment(
+                razorpay_order_id,
+                razorpay_payment_id,
+                razorpay_signature,
+                Donation?.data?.data?.transationHistryId
+              );
+            },
+          };
+          const razorpayInstance = new window.Razorpay(options);
+          razorpayInstance.open();
+
+          setPaymentLoading(false);
         }
       } catch (err) {
         console.log(err);
@@ -122,65 +139,59 @@ const NewDonationForm = () => {
   };
   //========================= end of code =========================//
 
-  //==============================Razor Pay Object=============================//
-  let options = {
-    modal: {
-      ondismiss: function () {
+  //=========================Verify Payment =========================//
+
+  const VerifyPayment = async (
+    razorpay_order_id,
+    razorpay_payment_id,
+    razorpay_signature,
+    transationHistryId
+  ) => {
+    setDisable(true);
+    setFormError("");
+    const payload = {
+      razorpay_order_id: razorpay_order_id,
+      razorpay_payment_id: razorpay_payment_id,
+      razorpay_signature: razorpay_signature,
+      transationHistryId: transationHistryId,
+    };
+    try {
+      const Verify = await axiosMain.post("/payment/verifyOrder", payload, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${user.token}`,
+        },
+      });
+
+      if (Verify?.data?.success) {
         setDisable(false);
-      },
-    },
-    key: "rzp_test_stZ12Y8PtmgNZi",
-    amount: amount,
-    currency: "INR",
-    name: "Agrasen tirthdham Nirman Seva",
-    description: "Agrasen tirthdham Nirman Seva",
-    callback_url: "",
-    razorpay_order_id: razorpayid,
-
-    handler: async (response) => {
-      console.log(response, "respssssssssssssssssssssonse");
-
-      const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
-        response;
-
-      //   const payload = {
-      //     order_id: razorpay_payment_id,
-      //     payment_id: razorpay_payment_id,
-      //     razorpay_signature: razorpay_signature,
-      //   };
-      //   try {
-      //     const api = await axiosMain.post("payment/verifyOrder", payload);
-      //     if (api.data.status) {
-      //       setDisable(false);
-      //       setModelMessage("payment success");
-      //       setOpenModel(true);
-      //       setRandomVal(Math.floor(Math.random() * 100 + 1));
-      //     }
-      //   } catch (error) {
-      //     setDisable(false);
-      //     setModelMessage(error.response.data.message);
-      //     setOpenModel(true);
-      //     setRandomVal(Math.floor(Math.random() * 100 + 1));
-      //   }
-    },
-
-    theme: {
-      color: "#000",
-    },
+        setModelMessage(Verify?.data?.message);
+        setOpenModel(true);
+        setRandomVal(Math.floor(Math.random() * 100 + 1));
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000);
+        
+      }
+    } catch (err) {
+      console.log(err);
+      setDisable(false);
+      setModelMessage(err?.response?.data?.message);
+      setOpenModel(true);
+      setRandomVal(Math.floor(Math.random() * 100 + 1));
+    }
   };
   //========================= end of code =========================//
 
-  //==============================Code For Open Razor Pay Model=============================//
-  const HandleRazorPay = async () => {
-    const pay = new window.Razorpay(options);
-    setDisable(true);
-    pay.open();
-  };
-  //==============================End Of Code=============================//
   return (
     <>
       <Layout>
         <section className="form-login-sec">
+          <Notification
+            message_mo={modelMessage}
+            action_mo={openModel}
+            random_val={randomVal}
+          />
           <Container>
             {/* <p className="devotee-head">
               Dear Devotees, Shri Ram Temple Kamarpal is being built in
@@ -221,6 +232,7 @@ const NewDonationForm = () => {
                                         id="html"
                                         name="fav_language"
                                         value="HTML"
+                                        checked
                                       />
                                       <label for="html">Online Payment</label>
                                     </div>
@@ -333,6 +345,7 @@ const NewDonationForm = () => {
                             <DatePicker
                               selected={startDate}
                               onChange={(date) => setStartDate(date)}
+                              maxDate={new Date()}
                             />
                           </Form.Group>
                         </Col>
@@ -386,7 +399,7 @@ const NewDonationForm = () => {
                         </Col>
                         <Col lg={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label>State*</Form.Label>
+                            <Form.Label>State</Form.Label>
                             <select
                               className="form-control"
                               name="State"
@@ -436,12 +449,11 @@ const NewDonationForm = () => {
                         </Col>
                         <Col lg={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label>Country*</Form.Label>
+                            <Form.Label>Country</Form.Label>
                             <select
                               id="country"
                               name="country"
                               className="form-control"
-                              //   onChange={}
                               value={"India"}
                             >
                               <option value="India">India</option>

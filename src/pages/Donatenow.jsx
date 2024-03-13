@@ -287,7 +287,16 @@ export const Donatenow = () => {
                           </li>
                         </ul>
                         <div>
-                          <button className="cmn-btn">Donate Now</button>
+                          <button
+                            className="cmn-btn"
+                            onClick={() => {
+                              navigate("/new-donation-form", {
+                                state: { amount: amounttilevalue },
+                              });
+                            }}
+                          >
+                            Donate Now
+                          </button>
                         </div>
                       </div>
                     </Col>
@@ -442,7 +451,16 @@ export const Donatenow = () => {
                           </li>
                         </ul>
                         <div>
-                          <button className="cmn-btn">Donate Now</button>
+                          <button
+                            className="cmn-btn"
+                            onClick={() => {
+                              navigate("/new-donation-form", {
+                                state: { amount: amountsquarevalue },
+                              });
+                            }}
+                          >
+                            Donate Now
+                          </button>
                         </div>
                       </div>
                     </Col>

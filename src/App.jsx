@@ -21,7 +21,6 @@ import { Forgotpass } from "./pages/Forgotpass";
 import { Resetpass } from "./pages/Resetpass";
 import { Otp } from "./pages/Otp";
 import { SignUpOtp } from "./pages/SignUpOtp";
-import { DonationForm } from "./pages/DonationForm";
 import NewDonationForm from "./pages/NewDonationForm";
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
           <Route path="/legal-status" element={<Legalstatus />} />
           <Route path="/board-member" element={<Boardmember />} />
           <Route path="/contact-us" element={<Contactus />} />
-          <Route path="/donation-form" element={<DonationForm />} />
           <Route path="/new-donation-form" element={<NewDonationForm />} />
           <Route
             path="/dashboard"
