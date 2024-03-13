@@ -327,6 +327,15 @@ const NewDonationForm = () => {
                             />
                           </Form.Group>
                         </Col>
+                        <div className="inner-taxation">
+                        <div
+ className="para-taxation"
+>
+  To help us issue your 80G tax exemption certificate for payments, kindly
+  Provide us the transaction confirmation number below:
+</div>
+
+                          <Row>                        
                         <Col lg={6}>
                           <Form.Group className="mb-3">
                             <Form.Label>Pancard</Form.Label>
@@ -460,6 +469,8 @@ const NewDonationForm = () => {
                             </select>
                           </Form.Group>
                         </Col>
+                        </Row>
+                        </div>
                         <Col lg="6">
                           <h4 className=" text-start font-w600">
                             3. Source of Information

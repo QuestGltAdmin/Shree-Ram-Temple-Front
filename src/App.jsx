@@ -45,6 +45,7 @@ function App() {
           <Route path="/legal-status" element={<Legalstatus />} />
           <Route path="/board-member" element={<Boardmember />} />
           <Route path="/contact-us" element={<Contactus />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/new-donation-form" element={<NewDonationForm />} />
           <Route path="/privacy-url" element={<PrivacyPolicy />} />
           <Route
